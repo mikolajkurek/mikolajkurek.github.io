@@ -3,69 +3,63 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Helvetica', 'Arial', sans-serif;
-    overflow: hidden;
+    /*overflow: hidden;*/
     color: black;
 }
 
 #nav {
     position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: 1.125rem;
-    padding: 1rem;
-    font-weight: 100;
 }
 
-#footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#logo {
+     font-size: 4rem;
+     font-weight: 100;
+     font-style: italic;
+     padding: 0.5rem 1rem;
+}
+
+#copyright {
     position: absolute;
-    bottom: 0;
+    right: 0;
+    top: 65%;
+    font-size: 4rem;
     padding: 1rem;
     font-weight: 100;
 }
 
 a {
     text-decoration: none;
-}
-
-.icon {
-    font-size: 2rem;
+    cursor: pointer;
 }
 
 @keyframes left-to-right {
     0% {
-        left: -600px;
+        left: 105vw;
     }
     100% {
-        left: 100vw;
+        left: -4250px;
     }
-}
-
-#instagram {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    font-weight: 100;
 }
 
 #work-in-progress {
     position: absolute;
     white-space: nowrap;
-    overflow: hidden;
-    animation: left-to-right 6s linear infinite;
-    font-size: 4rem;
-    letter-spacing: 0.25rem;
+    overflow-x: visible;
+    animation: left-to-right 8s linear infinite;
+    left: 0;
+    font-size: 24rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
 }
 
 .full-page {
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
