@@ -48,7 +48,7 @@ a {
     position: absolute;
     white-space: nowrap;
     overflow-x: visible;
-    animation: left-to-right 8s linear infinite;
+    animation: left-to-right 16s linear infinite;
     left: 0;
     font-size: 24rem;
     font-weight: bold;
