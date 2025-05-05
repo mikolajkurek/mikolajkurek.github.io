@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #242edb;
+    --black: #000;
+    --white: #fff;
+}
+
+@font-face {
+    font-family: GeistMono;
+    src: url(Fonts/GeistMono.ttf);
+}
+
+@font-face {
+    font-family: HankenGrotesk;
+    src: url(Fonts/HankenGrotesk.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: HankenGrotesk, 'Arial', sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: url(Images/overlay.png);
+    /*background-color: rgba(0, 0, 0, 0.6);*/
+    opacity: 0.2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.char {
+    will-change: transform;
+}
+
+h1 {
+    z-index: 1;
+    font-size: 2.25rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+p {
+    font-family: GeistMono, 'Arial', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 100;
+    text-align: justify;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    transition: all 0.2s ease-out;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.contact-links:hover a {
+    opacity: 0.6;
+}
+
+.contact-links a:hover {
+    opacity: 1;
+}
+
+.left-panel {
+    padding: 2rem;
+    height: 100%;
+    background: var(--primary-color);
+    color: var(--white);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-panel .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+
+.row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.row.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.row .contact-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.img-me {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.section2 {
+    justify-content: flex-end;
+}
+
+.projects {
+    width: 60%;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+}
