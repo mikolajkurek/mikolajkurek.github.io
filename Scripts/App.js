@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(SplitText)
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
     ScrollSmoother.create({
         smooth: 0.2,
+        effects: true
     });
 
     let initialStaggerSplit = SplitText.create(".initialStagger", {
@@ -20,16 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     gsap.from(".projectsMenu", {
-        xPercent: 100,
+        x: document.querySelector(".projectsMenu").offsetWidth,
         scrollTrigger: {
             // markers: true,
             trigger: ".section2",
             start: "top 90%",
-            end: "center center",
+            end: "top 30%",
             scrub: 1,
         }
     })
 
+    gsap.to(".section2", {
+        scrollTrigger: {
+            trigger: ".section2",
+            start: "top top",
+            end: "bottom bottom",
+            pin: ".projectsMenu",
+            pinSpacing: false,
+            // markers: true,
+        }
+    });
 
     // let heroSplit = SplitText.create(".hero", {
     //     type: "chars"
@@ -136,11 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const projectsListElements = document.querySelectorAll(".projectsListElement");
+    const projects = document.querySelectorAll(".projectSection");
 
-    projectsListElements.forEach((element) => {
+    projectsListElements.forEach((element, index) => {
         element.addEventListener("click", () => {
             projectsListElements.forEach((el) => el.classList.remove("active"));
             element.classList.add("active");
+
+            gsap.to(window, {duration: 1, scrollTo: projects[index], overwrite: "auto", ease: "power2.inOut"});
         })
     })
 })
