@@ -142,6 +142,7 @@ a {
     width: 100vw;
     display: flex;
     justify-content: flex-end;
+    overflow-x: hidden;
 }
 
 .projectInfo {
