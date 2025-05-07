@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    gsap.from(".projects", {
+    gsap.from(".projectsMenu", {
         xPercent: 100,
         scrollTrigger: {
             // markers: true,
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     }
     // })
 
-    const st = SplitText.create(".scrambleEffect", { type: "chars", charsClass: "char" });
+    const st = SplitText.create(".scrambleEffect", { type: "chars words", charsClass: "char" });
 
     st.chars.forEach((char) => {
         gsap.set(char, { attr: { "data-content": char.innerHTML } });
@@ -135,5 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const projectsListElements = document.querySelectorAll(".projectsListElement");
 
+    projectsListElements.forEach((element) => {
+        element.addEventListener("click", () => {
+            projectsListElements.forEach((el) => el.classList.remove("active"));
+            element.classList.add("active");
+        })
+    })
 })

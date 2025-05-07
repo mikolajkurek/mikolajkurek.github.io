@@ -41,6 +41,10 @@
     will-change: transform;
 }
 
+/*p .char {*/
+/*    font-family: GeistMono, 'Arial', sans-serif;*/
+/*}*/
+
 h1 {
     z-index: 1;
     font-size: 2.25rem;
@@ -53,7 +57,7 @@ h2 {
 }
 
 p {
-    font-family: GeistMono, 'Arial', sans-serif;
+    /*font-family: GeistMono, 'Arial', sans-serif;*/
     font-size: 1.25rem;
     font-weight: 100;
     text-align: justify;
@@ -134,9 +138,38 @@ a {
     justify-content: flex-end;
 }
 
-.projects {
-    width: 60%;
+.projectInfo {
+    width: 70%
+}
+
+.projectsMenu {
+    width: 30%;
     background: var(--primary-color);
     color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.MyProjects {
     padding: 2rem;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectsListElement {
+    padding: 0.75rem 2rem;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.projectsListElement:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.projectsListElement.active {
+    background: var(--white);
+    color: var(--primary-color);
 }
