@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         type: "lines"
     })
 
+    // Animating the lines on load
     gsap.from(initialStaggerSplit.lines, {
         y: 50,
         ease: "back.out",
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    // Sliding the projects menu from the right
     gsap.from(".projectsMenu", {
         x: document.querySelector(".projectsMenu").offsetWidth,
         scrollTrigger: {
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    // Pinning the projects menu
     gsap.to(".section2", {
         scrollTrigger: {
             trigger: ".section2",
@@ -98,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set(char, { attr: { "data-content": char.innerHTML } });
     });
 
+    // Scramble effect for page 1
     const section1 = document.querySelector(".section1");
-
     section1.onpointermove = (e) => {
         st.chars.forEach((char) => {
             const rect = char.getBoundingClientRect();
@@ -122,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Scramble effect for page 2
     const section2 = document.querySelector(".section2");
-
     section2.onpointermove = (e) => {
         st.chars.forEach((char) => {
             const rect = char.getBoundingClientRect();
@@ -146,15 +149,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Projects Menu scrolling
     const projectsListElements = document.querySelectorAll(".projectsListElement");
     const projects = document.querySelectorAll(".projectSection");
 
+    let scrolling = false;
     projectsListElements.forEach((element, index) => {
         element.addEventListener("click", () => {
+            scrolling = true;
             projectsListElements.forEach((el) => el.classList.remove("active"));
             element.classList.add("active");
 
-            gsap.to(window, {duration: 1, scrollTo: projects[index], overwrite: "auto", ease: "power2.inOut"});
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: projects[index],
+                overwrite: "auto",
+                ease: "power2.inOut",
+                onComplete: () => {scrolling = false}
+            });
         })
     })
+
+    // Projects info snapping
+    ScrollTrigger.create({
+        trigger: '.section1',
+        start: 'top top',
+        endTrigger: '.section2',
+        end: 'bottom bottom',
+        markers: true,
+
+        snap: {
+            snapTo: 1 / ((projects.length - 1) + 1),
+            duration: {min: 0.25, max: 0.75},
+            delay: 0.1,
+            ease: 'power1.inOut',
+            directional: false,
+        }
+    });
+
+    // Projects info active class on scroll
+    projects.forEach((project, index) => {
+        ScrollTrigger.create({
+            trigger: project,
+            start: "top 10%",
+            end: "bottom 90%",
+            onEnter: () => {
+                if (scrolling) return;
+                projectsListElements.forEach((el) => el.classList.remove("active"));
+                projectsListElements[index].classList.add("active");
+            },
+            onEnterBack: () => {
+                if (scrolling) return;
+                projectsListElements.forEach((el) => el.classList.remove("active"));
+                projectsListElements[index].classList.add("active");
+            },
+        });
+    });
 })
