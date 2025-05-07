@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         start: 'top top',
         endTrigger: '.section2',
         end: 'bottom bottom',
-        markers: true,
+        // markers: true,
 
         snap: {
             snapTo: 1 / ((projects.length - 1) + 1),
