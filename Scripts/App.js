@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //     }
     // })
 
-    const st = SplitText.create(".scrambleEffect", { type: "chars words", charsClass: "char" });
+    const st = SplitText.create(".scrambleEffect", {type: "chars words", charsClass: "char"});
 
     st.chars.forEach((char) => {
-        gsap.set(char, { attr: { "data-content": char.innerHTML } });
+        gsap.set(char, {attr: {"data-content": char.innerHTML}});
     });
 
     // Scramble effect for page 1
@@ -114,13 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dist < 50)
                 gsap.to(char, {
                     overwrite: true,
-                    duration: 1.2 -dist / 50,
+                    duration: 1.2 - dist / 50,
                     scrambleText: {
                         text: char.dataset.content,
                         chars: ".:",
                         speed: 0.5,
                     },
-                    ease:'none'
+                    ease: 'none'
                 });
         });
     };
@@ -138,13 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dist < 50)
                 gsap.to(char, {
                     overwrite: true,
-                    duration: 1.2 -dist / 50,
+                    duration: 1.2 - dist / 50,
                     scrambleText: {
                         text: char.dataset.content,
                         chars: ".:",
                         speed: 0.5,
                     },
-                    ease:'none'
+                    ease: 'none'
                 });
         });
     };
@@ -165,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTo: projects[index],
                 overwrite: "auto",
                 ease: "power2.inOut",
-                onComplete: () => {scrolling = false}
+                onComplete: () => {
+                    scrolling = false
+                }
             });
         })
     })
