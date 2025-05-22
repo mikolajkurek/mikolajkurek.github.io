@@ -63,7 +63,7 @@ h2 {
 p {
     /*font-family: GeistMono, 'Arial', sans-serif;*/
     font-size: 1.25rem;
-    font-weight: 100;
+    font-weight: 200;
     text-align: justify;
 }
 
@@ -202,6 +202,6 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0.5rem;
+    gap: 2rem;
     text-align: justify;
 }
