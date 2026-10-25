@@ -5,7 +5,7 @@ One-page portfolio and interactive CV. Static HTML/CSS/ES modules with no build 
 ## Run locally
 
 ```bash
-python3 .claude/serve.py
+python3 -m http.server 4173
 ```
 
 Then open http://127.0.0.1:4173. ES modules need a server, so opening `index.html` directly won't work.
