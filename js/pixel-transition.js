@@ -82,15 +82,42 @@ export class PixelGrid {
     this.ctx.clearRect(0, 0, this.W, this.H);
   }
 
+  // How many cells must be done before most of the top and bottom rows are:
+  // the moment the wave has passed each screen edge
+  edgeMarks(order, share = 0.5) {
+    const { cols, rows } = this;
+    const rank = new Uint32Array(order.length);
+    order.forEach((cell, i) => { rank[cell] = i; });
+    const mark = (r) => {
+      const ranks = Array.from({ length: cols }, (_, c) => rank[r * cols + c]).sort((a, b) => a - b);
+      return ranks[Math.min(cols - 1, Math.floor(cols * share))] + 1;
+    };
+    return { top: mark(0), bottom: mark(rows - 1) };
+  }
+
   // mode: 'cover' ends with every cell in `color`; 'reveal' ends with every cell cleared.
-  async run(mode, color, { origin = null, duration = 450, accent = null } = {}) {
+  // edges: [{ share, lead, fire(edge) }] calls fire('top' | 'bottom') when the
+  // wave has done `share` of that screen edge's row, `lead` ms early (Safari
+  // fades its bar colour, so asking early lands it on time).
+  async run(mode, color, { origin = null, duration = 450, accent = null, edges = [] } = {}) {
     const order = this.order(origin);
     const n = order.length;
+    const span0 = accent ? 1 - LAG : 1;
+    // When a mark is reached: invert the easing for the settle front
+    const when = (mark) => Math.acos(1 - 2 * Math.min(1, (accent ? LAG : 0) + span0 * (mark / n))) / Math.PI * duration;
+    const at = [];
+    for (const { share, lead = 0, fire } of edges) {
+      for (const [edge, mark] of Object.entries(this.edgeMarks(order, share))) at.push({ t: when(mark) - lead, fire: () => fire(edge) });
+    }
+    const check = (elapsed) => {
+      for (const a of at) if (!a.done && elapsed >= a.t) { a.done = true; a.fire(); }
+    };
     const final = mode === 'cover' ? color : null;
     const span = accent ? 1 - LAG : 1;
     let lit = 0;
     let settled = 0;
     const t0 = performance.now();
+    check(0);
     for (;;) {
       const now = await nextFrame();
       const p = Math.min(1, (now - t0) / duration);
@@ -99,8 +126,10 @@ export class PixelGrid {
       const settleTo = p >= 1 ? n : accent ? Math.max(0, Math.floor(((e - LAG) / span) * n)) : litTo;
       if (accent) for (; lit < litTo; lit++) this.paint(order[lit], accent);
       for (; settled < settleTo; settled++) this.paint(order[settled], final);
+      check(now - t0);
       if (p >= 1) break;
     }
+    check(Infinity);
     if (final) this.fill(final); else this.clear();
   }
 }

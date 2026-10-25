@@ -92,20 +92,45 @@ function swap(next) {
   }
 }
 
+// Phones only: Safari on iPhone tints its own bars from the page element
+// touching each screen edge. As the wipe covers an edge, the bar there fills
+// with the wipe colour (hidden under it) so Safari's bar follows. Safari keeps
+// the last solid colour it saw, so shortly before the reveal opens an edge the
+// bar takes the new page's colour, still hidden under the wipe, and it goes
+// clear once the page shows there: Safari returns to neutral, nothing flashes.
+const phone = matchMedia('(max-width: 820px)');
+const SAFARI_LAG = 180; // ms Safari takes to fade its bar to a new colour
+const setAt = {};
+function tintEdge(edge, color) {
+  if (!phone.matches) return;
+  const root = document.documentElement;
+  if (color) root.style.setProperty(`--edge-${edge}`, color);
+  else root.style.removeProperty(`--edge-${edge}`);
+  root.classList.toggle('is-tinting', !!(root.style.getPropertyValue('--edge-top') || root.style.getPropertyValue('--edge-bottom')));
+}
+const coverEdges = (color) => ({ edges: [{ share: 0.5, lead: SAFARI_LAG, fire: (e) => tintEdge(e, color) }] });
+const revealEdges = (bg) => ({
+  edges: [
+    { share: 0.03, lead: SAFARI_LAG, fire: (e) => { setAt[e] = performance.now(); tintEdge(e, bg); } },
+    // Clear once the page shows there, but give Safari a moment with the colour
+    { share: 0.03, fire: (e) => setTimeout(() => tintEdge(e, null), Math.max(0, setAt[e] + 120 - performance.now())) },
+  ],
+});
+
 async function go(id, { origin = null, push = true, then = null } = {}) {
   if (busy || !ids.includes(id)) return;
   if (current?.id === id) { then?.(); return; }
   busy = true;
   const next = document.getElementById(id);
-  const { cover, accent } = colours(next.dataset.scheme);
-  if (!reducedMotion) await fx.run('cover', cover, { origin, duration: 420, accent });
+  const { cover, accent, bg } = colours(next.dataset.scheme);
+  if (!reducedMotion) await fx.run('cover', cover, { origin, duration: 420, accent, ...coverEdges(cover) });
   swap(next);
   then?.();
   if (push) history.pushState(null, '', `#${id}`);
   next.querySelector('[data-focus]')?.focus({ preventScroll: true });
   if (!reducedMotion) {
     await wait(40);
-    await fx.run('reveal', null, { origin, duration: 520, accent });
+    await fx.run('reveal', null, { origin, duration: 520, accent, ...revealEdges(bg) });
   }
   busy = false;
 }
@@ -290,7 +315,7 @@ async function boot() {
 
   const hash = location.hash.slice(1).replace(/^cv$/, 'about'); // old links to the CV page
   const first = document.getElementById(ids.includes(hash) ? hash : isProjectHash(hash) ? 'work' : ids[0]);
-  const { cover, accent } = colours(first.dataset.scheme);
+  const { cover, accent, bg } = colours(first.dataset.scheme);
 
   // Loading screen: the photo resolves in pixel steps, then it waits for the
   // visitor to finish reading and choose Enter (with the guided intro) or Skip
@@ -321,13 +346,20 @@ async function boot() {
   intro = choice !== 'skip';
   document.documentElement.dataset.intro = intro ? 'on' : 'off';
   document.dispatchEvent(new CustomEvent('intro:chosen', { detail: { intro, first: first.id } }));
-  if (!reducedMotion) await fx.run('cover', cover, { duration: 620, accent });
+  if (!reducedMotion) {
+    // The bars are hidden under the loading screen, so it carries the colour
+    await fx.run('cover', cover, { duration: 620, accent, edges: [{ share: 0.5, lead: SAFARI_LAG, fire: () => { if (phone.matches) loader.style.background = cover; } }] });
+    tintEdge('top', cover);
+    tintEdge('bottom', cover);
+  }
   loader.remove();
   document.documentElement.classList.remove('is-loading');
   swap(first);
   if (isProjectHash(hash)) projects.open(hash);
   await nextFrame();
-  if (!reducedMotion) await fx.run('reveal', null, { duration: 800, accent });
+  if (!reducedMotion) {
+    await fx.run('reveal', null, { duration: 800, accent, ...revealEdges(bg) });
+  }
 }
 
 boot();

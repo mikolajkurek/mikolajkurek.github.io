@@ -50,6 +50,13 @@ html.is-loading .edge-blur { visibility: hidden; }
 /* Phones: a hard edge reads better than blur meeting the white area */
 @media (max-width: 820px) { .edge-blur { display: none; } }
 
+/* Phones: during a page wipe the bars take its colour (hidden under it), so
+   Safari on iPhone tints its own bars to match (js/main.js tintEdge) */
+@media (max-width: 820px) {
+  html.is-tinting .topbar { background: var(--edge-top, transparent); }
+  html.is-tinting .foot { background: var(--edge-bottom, transparent); }
+}
+
 /* Stage + panels ----------------------------------------------------------- */
 .stage {
   position: fixed; inset: 0;
