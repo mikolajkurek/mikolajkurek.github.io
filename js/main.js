@@ -26,11 +26,16 @@ function colours(scheme) {
   const probe = document.createElement('div');
   probe.className = `s-${scheme}`;
   probe.hidden = true;
-  document.body.appendChild(probe);
+  // Outside <body>, which carries the current page's colourway: a scheme that
+  // leaves --tone unset (paper) would otherwise inherit the old page's tone
+  document.documentElement.appendChild(probe);
   const cs = getComputedStyle(probe);
   const bg = cs.getPropertyValue('--bg').trim();
-  // The wipe covers in the page's own colour, then reveals the white page
-  const out = { bg, cover: cs.getPropertyValue('--tone').trim() || bg, accent: cs.getPropertyValue('--accent').trim() };
+  // The wipe covers in the page's own colour (About, which has none, uses its
+  // blue accent, like the Map), then reveals the page. The wave's leading
+  // edge uses that same colour, so no other colour flashes in it
+  const cover = cs.getPropertyValue('--tone').trim() || cs.getPropertyValue('--accent').trim() || bg;
+  const out = { bg, cover, accent: cover };
   probe.remove();
   return out;
 }

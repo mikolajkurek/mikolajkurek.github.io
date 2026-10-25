@@ -6,6 +6,16 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": [".claude/serve.py"],
       "port": 4173
+    },
+    {
+      "name": "portfolio-phone",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        ".claude/serve.py",
+        "0.0.0.0",
+        "4174"
+      ],
+      "port": 4174
     }
   ]
 }

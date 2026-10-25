@@ -64,7 +64,9 @@ function attach(el) {
       render(st);
     }, 900);
   };
-  el.addEventListener('pointerenter', grow);
+  // Mouse and pen only: a finger never sends a reliable leave, so on touch
+  // screens the line would stay drawn after the tap
+  el.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') grow(); });
   el.addEventListener('pointerleave', leave);
   el.addEventListener('focus', () => el.matches(':focus-visible') && grow());
   el.addEventListener('blur', leave);

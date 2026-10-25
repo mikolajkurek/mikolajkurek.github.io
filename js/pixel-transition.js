@@ -26,7 +26,9 @@ export class PixelGrid {
   // Works in device pixels so cells tile exactly, with no hairline seams.
   resize() {
     this.dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const rect = this.host ? this.host.getBoundingClientRect() : { width: innerWidth, height: innerHeight };
+    // The canvas itself, which on phones reaches under the browser's own bars
+    let rect = (this.host || this.canvas).getBoundingClientRect();
+    if (!rect.width || !rect.height) rect = { width: innerWidth, height: innerHeight };
     this.W = Math.max(1, Math.ceil(rect.width * this.dpr));
     this.H = Math.max(1, Math.ceil(rect.height * this.dpr));
     this.canvas.width = this.W;

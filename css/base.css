@@ -100,8 +100,9 @@ body {
 
 /* Effect canvases ---------------------------------------------------------- */
 .fx {
-  position: fixed; inset: 0;
-  width: 100vw; height: 100dvh;
+  position: fixed; inset: 0 auto auto 0;
+  /* Large viewport: on phones it also runs under the browser's bars */
+  width: 100vw; height: 100lvh;
   pointer-events: none;
 }
 .fx--transition { z-index: 50; }
