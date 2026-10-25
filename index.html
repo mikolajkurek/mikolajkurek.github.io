@@ -1,171 +1,914 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="is-loading">
 <head>
-    <meta charset="UTF-8">
-    <title>Mikolaj Kurek</title>
-    <link rel="stylesheet" href="main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mikolaj Kurek, Applied Computer Science Engineer</title>
+  <meta name="description" content="Mikolaj Kurek is an applied computer science engineer and MSc student at Cracow University of Technology, currently on Erasmus in Besancon, France. Real-time computer vision on edge devices, 3D-printed med-tech and industrial systems.">
+  <meta name="author" content="Mikolaj Kurek">
+  <meta name="theme-color" content="#242edb">
+  <link rel="canonical" href="https://mikolajkurek.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mikolaj Kurek, Applied Computer Science Engineer">
+  <meta property="og:description" content="Edge AI, computer vision, 3D-printed med-tech and industrial systems. Portfolio and interactive CV.">
+  <meta property="og:url" content="https://mikolajkurek.github.io/">
+  <meta property="og:image" content="https://mikolajkurek.github.io/assets/img/portrait-paris.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23242edb'/%3E%3Cpath fill='%230a0c09' d='M1 2h1v4H1zM2 3h1v1H2zM3 4h1v1H3zM4 3h1v1H4zM5 2h1v4H5z'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23f9dc4a'/%3E%3C/svg%3E">
+
+  <link rel="preload" href="assets/fonts/AlteHaasGroteskBold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/AlteHaasGroteskRegular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Silkscreen&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/stickers.css">
+  <script type="module" src="js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mikolaj Kurek",
+    "jobTitle": "Applied Computer Science Engineer",
+    "email": "mailto:mikolaj.kurek21@gmail.com",
+    "url": "https://mikolajkurek.github.io/",
+    "sameAs": ["https://github.com/mikolajkurek"],
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Cracow University of Technology" },
+    "knowsAbout": ["Computer vision", "Edge AI", "YOLO", "TensorFlow", "FastAPI", "React", "PLC", "3D printing", "Blender Python API"]
+  }
+  </script>
 </head>
-<body>
-<!--<div class="overlay"></div>-->
-<div class="smooth-wrapper">
-    <div class="section1">
-        <div class="left-panel">
-            <div class="content">
-                <div class="hi">
-                    <h1 class="initialStagger scrambleEffect">Hi, I'm Mikolaj Kurek</h1>
-                    <p class="initialStagger scrambleEffect">Applied Computer Science Student</p>
-                    <p class="initialStagger scrambleEffect">Robotics, AI, and UI/UX Enthusiast</p>
-                </div>
-                <h2 class="initialStagger scrambleEffect">Based in Krakow, Poland</h2>
-                <div class="row">
-                    <h2 class="initialStagger scrambleEffect">Contact</h2>
-                    <div class="contact-links initialStagger">
-                        <p><a href="https://www.instagram.com/iamnotmikolaj/" target="_blank">Instagram:
-                            @iamnotmikolaj</a></p>
-                        <p><a href="https://github.com/mikolajkurek" target="_blank">Github: mikolajkurek</a></p>
-                        <p><a href="mailto:mikolaj.kurek21@gmail.com">mikolaj.kurek21@gmail.com</a></p>
-                        <p><a href="tel:+48533685535">+48 533-685-535</a></p>
-                    </div>
-                </div>
-                <div class="row about">
-                    <h2 class="initialStagger scrambleEffect">About Me</h2>
-                    <p class="initialStagger scrambleEffect">I’m a 23-year-old Applied Computer Science student at
-                        Politechnika Krakowska in Krakow, Poland. I love creating innovative solutions, whether it’s
-                        coding, designing a 3D-printed prototype, or crafting user-friendly interfaces.</p>
-                </div>
-                <div class="row">
-                    <h2 class="initialStagger scrambleEffect">Skills</h2>
-                    <p class="initialStagger scrambleEffect">3D Modeling & Printing, Robotics, Artificial Intelligence,
-                        Computer Vision, Image Analysis, UI/UX Design, Programming</p>
-                </div>
-            </div>
-            <p class="initialStagger scrambleEffect">© 2025 Code by Mikolaj Kurek</p>
+
+<body class="s-blue">
+  <!-- Loading screen: the photo resolves in pixel steps; the name and titles
+       introduce who this is. It waits until the visitor enters, or skips the
+       intro (no guided tour, no suggested order). -->
+  <div class="loader">
+    <figure class="loader__fig">
+      <div class="pixel-img"><img src="assets/img/portrait-paris.webp" width="2000" height="1566" alt="" fetchpriority="high"></div>
+      <figcaption class="loader__intro">
+        <span class="loader__name">Mikolaj Kurek</span>
+        <span class="loader__titles">BEng in Applied Computer Science.<br>Co-founder and CTO, med-tech startup.<br>MSc student, Erasmus at FEMTO-ST.</span>
+      </figcaption>
+      <div class="loader__go">
+        <button class="btn" type="button" data-intro="skip">Skip intro</button>
+        <button class="btn btn--solid" type="button" data-intro="enter">Enter <span class="arrow" aria-hidden="true">→</span></button>
+      </div>
+    </figure>
+  </div>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===================================================== TOP BAR -->
+  <header class="topbar">
+    <div class="topbar__start">
+      <!-- The guide lives here after its tour on the Index: click it for help
+           with whichever page is open (js/guide.js) -->
+      <button class="guide guide--nav" type="button" aria-label="Help" hidden>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><g class="face"><circle class="face__head" cx="50" cy="50" r="50"/><circle class="face__eye" cx="40" cy="38" r="3.6"/><path class="face__mouth" d="M49 22.5 H57 V45 L63 50 L57 55 V77.5 H49"/></g></svg>
+      </button>
+      <a class="brand" href="#index" data-goto="index">Mikolaj Kurek</a>
+      <div class="bubble bubble--help" role="status" aria-live="polite" hidden>
+        <p class="bubble__text" data-help-text></p>
+        <div class="bubble__foot">
+          <button type="button" class="bubble__btn" data-help-close>Close</button>
+          <button type="button" class="bubble__btn bubble__btn--next" data-help-tour hidden>Show me around</button>
         </div>
-        <div class="right-panel">
-            <img src="Images/me.png" alt="me" class="img-me">
-        </div>
+      </div>
     </div>
-    <div class="section2">
-        <div class="projectInfo">
-            <div class="projectSection">
-                <h1>AI Trainer</h1>
-                <div class="projectSectionGrid">
-                    <p style="grid-column: 1/3">AI Trainer is an innovative fitness application designed to enhance
-                        workout experiences by leveraging computer vision and AI.
-                    </p>
-                    <div class="image"
-                         style="grid-column: 3/5; grid-row: 1/3; background: url('./Images/AITrainer.png') no-repeat; background-size: contain;">
-                    </div>
-                    <div class="image"
-                         style="grid-column: 1/3; grid-row: 2/4; background: url('./Images/Workout.png') no-repeat; background-size: contain;">
-                    </div>
-                    <div class="image"
-                         style="grid-column: 3/5; grid-row: 3/5; background: url('./Images/CompletedWorkout.png') no-repeat; background-size: contain;">
-                    </div>
-                    <p style="grid-column: 1/3; grid-row: 4/5">The application uses a device camera and AI to count
-                        exercise repetitions with accuracy and provides real-time technique correction, making it an
-                        intuitive, equipment-free solution for home and gym workouts.
-                    </p>
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>Radiotherapy Applicators</h1>
-                <div class="projectSectionGrid">
-                    <p style="grid-column: 1/3; grid-row: 1/3">This project leverages computed tomography (CT) imaging
-                        to design and fabricate 3D-printed, patient-specific radiotherapy applicators. By integrating
-                        advanced 3D printing and modeling with medical imaging, we create custom applicators that
-                        revolutionize radiotherapy by enhancing radiation delivery precision, improving patient comfort,
-                        and reducing treatment times.
-                    </p>
-                    <div class="image image-style"
-                         style="grid-column: 3/5; grid-row: 1/3; background: url('./Images/CT.png') no-repeat; background-size: contain;">
-                    </div>
-                    <div class="image image-style"
-                         style="grid-column: 1/3; grid-row: 3/5; background: url('./Images/Render2.png') no-repeat; background-size: contain;">
-                    </div>
-                    <!--                <div class="image image-style" style="grid-column: 3/5; grid-row: 3/5; background: url('./Images/Maska3.png') no-repeat; background-size: contain;"></div>-->
-                    <p style="grid-column: 3/5; grid-row: 3/5">Our innovative approach transforms clinical practices,
-                        making precise treatments more accessible. The methodology also extends to other medical
-                        applications, such as custom prosthetics, surgical guides, and implants, amplifying its impact
-                        across healthcare.
-                    </p>
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>Automated Conveyor System with AI</h1>
-                <div class="projectSectionGrid">
-                    <p style="grid-column: 3/5">
-                        Developed an automated object sorting system using Raspberry Pi, a camera, and a conveyor belt
-                        constructed with
-                        aluminum profiles and 3D-printed elements. Implemented computer vision using a YOLO model
-                        trained on a custom
-                        dataset to identify and sort objects.
-                    </p>
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>Dan Cake Polonia</h1>
-                <div class="projectSectionGrid">
-                    <p style="grid-column: 3/5">
-
-                    </p>
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>Image Processing in Aphelion</h1>
-                <div class="projectSectionGrid">
-                    <p style="grid-column: 1/3">
-
-                    </p>
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>Automatic Plant Irrigation System</h1>
-                <div class="projectSectionGrid">
-
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>Rubik’s Sensei</h1>
-                <div class="projectSectionGrid">
-
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>3D Design and Printing</h1>
-                <div class="projectSectionGrid">
-
-                </div>
-            </div>
-            <div class="projectSection">
-                <h1>UI/UX</h1>
-                <div class="projectSectionGrid">
-
-                </div>
-            </div>
-        </div>
-        <div class="projectsMenu">
-            <h2 class="scrambleEffect MyProjects">My Projects</h2>
-            <div class="projectsList">
-                <p class="projectsListElement active">AI Trainer</p>
-                <p class="projectsListElement">Radiotherapy Applicators</p>
-                <p class="projectsListElement">Automated Conveyor System with AI</p>
-                <p class="projectsListElement">Dan Cake Polonia</p>
-                <p class="projectsListElement">Image Processing in Aphelion</p>
-                <p class="projectsListElement">Automatic Plant Irrigation System</p>
-                <p class="projectsListElement">Rubik’s Sensei</p>
-                <p class="projectsListElement">3D Design and Printing</p>
-                <p class="projectsListElement">UI/UX</p>
-            </div>
-        </div>
+    <nav class="nav" aria-label="Sections">
+      <ol>
+        <li><a href="#index" data-goto="index"><span class="snake-host">Map</span></a></li>
+        <li><a href="#about" data-goto="about"><span class="snake-host">About</span></a></li>
+        <li><a href="#work" data-goto="work"><span class="snake-host">Work</span></a></li>
+        <li><a href="#skills" data-goto="skills"><span class="snake-host">Skills</span></a></li>
+        <li><a href="#contact" data-goto="contact"><span class="snake-host">Contact</span></a></li>
+        <li><button class="nav__more" type="button" data-more aria-expanded="false" aria-controls="more-menu"><span class="snake-host">More</span><i class="chev" aria-hidden="true"></i></button></li>
+      </ol>
+      <!-- Opens straight down from the menu bar, in the same bar style -->
+      <div class="more" id="more-menu" hidden>
+        <ul>
+          <li><a href="https://www.instagram.com/iamnotmikolaj/" target="_blank" rel="noopener"><span class="snake-host">Instagram</span><span class="label">@iamnotmikolaj ↗</span></a></li>
+          <li><a href="https://github.com/mikolajkurek" target="_blank" rel="noopener"><span class="snake-host">GitHub</span><span class="label">↗</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="topbar__end">
+      <a class="btn btn--small" href="assets/Mikolaj_Kurek_CV.pdf" download><span class="snake-host">Download CV</span> <span class="arrow" aria-hidden="true">↓</span></a>
     </div>
-</div>
-<script src="Gsap/gsap.min.js"></script>
-<script src="Gsap/SplitText.min.js"></script>
-<script src="Gsap/ScrollTrigger.min.js"></script>
-<script src="Gsap/ScrollSmoother.min.js"></script>
-<script src="Gsap/ScrambleTextPlugin.min.js"></script>
-<script src="Gsap/ScrollToPlugin.min.js"></script>
-<script src="Scripts/App.js"></script>
+  </header>
+
+  <main id="main" class="stage">
+
+    <!-- ===================================================== 1 INDEX
+         The site as a transit map, in the language of the CV metro: four lines
+         leave "you are here", one per page, in that page's colour, with a stop
+         for each project, school or skill. Pixel trains run along them
+         (js/map.js). The name and titles are on the loading screen, so the
+         map has the whole page. After loading the map draws and the guide
+         steps into the middle to talk the visitor through the lines
+         (js/guide.js). On phones the lines become plain lists. -->
+    <section class="panel panel--index s-blue" id="index" data-scheme="blue" data-title="Map" aria-labelledby="index-title">
+      <div class="panel__inner">
+        <div class="index">
+          <h1 class="sr-only" id="index-title" tabindex="-1" data-focus>Mikolaj Kurek, applied computer science engineer</h1>
+          <nav class="map" aria-label="Site map">
+            <svg class="map__svg" aria-hidden="true"></svg>
+            <!-- "You are here", beside the grey ring the lines start from -->
+            <div class="map__hub">
+              <span class="label">You are here</span>
+            </div>
+            <!-- While the guide talks it stands in the middle of the map -->
+            <div class="guide-stage" hidden>
+              <div class="guide guide--stage" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><g class="face"><circle class="face__head" cx="50" cy="50" r="50"/><circle class="face__eye" cx="40" cy="38" r="3.6"/><path class="face__mouth" d="M49 22.5 H57 V45 L63 50 L57 55 V77.5 H49"/></g></svg></div>
+              <div class="bubble" role="status" aria-live="polite">
+                <p class="bubble__text" data-bubble-text></p>
+                <div class="bubble__foot">
+                  <span class="label" data-bubble-step></span>
+                  <button type="button" class="bubble__btn" data-bubble-skip>Skip</button>
+                  <button type="button" class="bubble__btn bubble__btn--next" data-bubble-next>Next</button>
+                </div>
+              </div>
+            </div>
+            <p class="map__hint label">Pick a line, or a stop on it. Stops run oldest to newest.</p>
+          <div class="mline" data-line="about" style="--c: var(--blue)">
+            <button class="stn stn--end" type="button" data-goto="about"><span class="snake-host">About</span><span class="stn__sub">Line to About</span></button>
+            <button class="stn" type="button" data-goto="about"><span class="snake-host">BEng</span><span class="stn__sub">2022 to 2026, Krakow</span></button>
+            <button class="stn" type="button" data-goto="about"><span class="snake-host">MSc</span><span class="stn__sub">02/2026 to now</span></button>
+            <button class="stn" type="button" data-goto="about"><span class="snake-host">Erasmus, FEMTO-ST</span><span class="stn__sub">08/2026 to 01/2027</span></button>
+            <button class="stn" type="button" data-goto="about"><span class="snake-host">NASA Space Apps</span><span class="stn__sub">Co-lead, 2026</span></button>
+          </div>
+          <div class="mline" data-line="work" style="--c: var(--marigold)">
+            <button class="stn stn--end" type="button" data-goto="work"><span class="snake-host">Work</span><span class="stn__sub">Line to Work</span></button>
+            <button class="stn stn--more" type="button" data-goto="work"><span class="snake-host">+4 more</span><span class="stn__sub">All projects</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-ecg"><span class="snake-host">ECG detection</span><span class="stn__sub">Data science, 2024</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-pot"><span class="snake-host">Plant pot</span><span class="stn__sub">Mechatronics, 2025</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-sim"><span class="snake-host">Ansys studies</span><span class="stn__sub">Simulation, 2025</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-brachy"><span class="snake-host">Brachytherapy</span><span class="stn__sub">Startup R&amp;D, 2025</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-nutri"><span class="snake-host">NutriVision AI</span><span class="stn__sub">Full-stack, 2025</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-sorter"><span class="snake-host">AI sorter</span><span class="stn__sub">BEng thesis, 2026</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-ev"><span class="snake-host">EV fleet analysis</span><span class="stn__sub">Data analysis, 2026</span></button>
+            <button class="stn" type="button" data-goto="work" data-card="p-forma"><span class="snake-host">FORMA app</span><span class="stn__sub">Mobile app, 2026</span></button>
+          </div>
+          <div class="mline" data-line="skills" style="--c: var(--green)">
+            <button class="stn stn--end" type="button" data-goto="skills"><span class="snake-host">Skills</span><span class="stn__sub">Line to Skills</span></button>
+            <button class="stn" type="button" data-goto="skills"><span class="snake-host">Computer vision</span><span class="stn__sub">YOLO, OpenCV</span></button>
+            <button class="stn" type="button" data-goto="skills"><span class="snake-host">Software</span><span class="stn__sub">Python, React</span></button>
+            <button class="stn" type="button" data-goto="skills"><span class="snake-host">Hardware</span><span class="stn__sub">Raspberry Pi, PLC</span></button>
+            <button class="stn" type="button" data-goto="skills"><span class="snake-host">3D and CAD</span><span class="stn__sub">Fusion 360, Creo</span></button>
+          </div>
+          <div class="mline" data-line="contact" style="--c: var(--red)">
+            <button class="stn stn--end" type="button" data-goto="contact"><span class="snake-host">Contact</span><span class="stn__sub">Line to Contact</span></button>
+            <button class="stn" type="button" data-goto="contact"><span class="snake-host">Besancon</span><span class="stn__sub">Until 01/2027</span></button>
+            <button class="stn" type="button" data-goto="contact"><span class="snake-host">Email</span><span class="stn__sub">Write to me</span></button>
+            <a class="stn" href="https://github.com/mikolajkurek" target="_blank" rel="noopener"><span class="snake-host">GitHub</span><span class="stn__sub">mikolajkurek ↗</span></a>
+          </div>
+          </nav>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== 2 CV -->
+    <section class="panel panel--cv s-paper" id="about" data-scheme="paper" data-title="About" aria-labelledby="cv-title">
+      <div class="panel__inner">
+        <div class="cv">
+          <div class="cv__intro">
+            <h2 class="h2" id="cv-title" tabindex="-1" data-focus>About<br>me</h2>
+            <p class="cv__profile">Applied computer science engineer and MSc student, bridging software, hardware and 3D. As co-founder and CTO of a med-tech startup I build personalised, 3D-printed brachytherapy applicators with the National Institute of Oncology. Hands-on with vision systems (AI and edge AI), web apps (React, FastAPI), PLC integration and two years of functional 3D printing.</p>
+            <div class="segment" role="group" aria-label="Filter timeline">
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="work" aria-pressed="false"><i class="dot" style="--dot: var(--marigold)"></i>Work</button>
+              <button type="button" data-filter="edu" aria-pressed="false"><i class="dot" style="--dot: var(--blue)"></i>Education</button>
+              <button type="button" data-filter="club" aria-pressed="false"><i class="dot" style="--dot: var(--green)"></i>Clubs and events</button>
+              <button type="button" data-filter="cert" aria-pressed="false"><i class="dot" style="--dot: var(--red)"></i>Certificates</button>
+            </div>
+          </div>
+
+          <ol class="cv__list scroll-y">
+            <li class="row" data-kind="club" data-lane="2" style="--kind: var(--green); --lane: 2">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r0">
+                <span class="row__date">2026</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">NASA Space Apps Challenge 2026</span><span class="row__org">Co-lead</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r0"><div><ul>
+                <li>Co-leading this year's NASA Space Apps Challenge, NASA's international hackathon where teams tackle real problems using NASA's open data.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="club" data-lane="2" data-ongoing style="--kind: var(--green); --lane: 2">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r1">
+                <span class="row__date">2026 to now</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">ASTRA FC, student club</span><span class="row__org">Universite Marie et Louis Pasteur (UMLP), Besancon</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r1"><div><ul>
+                <li>Member of the UMLP student club for robotics and aerospace projects.</li>
+              </ul></div></div>
+            </li>
+            <li class="row is-open is-now" data-kind="edu" data-lane="0" style="--kind: var(--blue); --lane: 0">
+              <button class="row__head" type="button" aria-expanded="true" aria-controls="r2">
+                <span class="row__date">08/2026 to 01/2027</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">Erasmus semester, ARMAC</span><span class="row__org">Universite Marie et Louis Pasteur (UMLP), Besancon, France</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r2"><div><ul>
+                <li>Exchange semester within my MSc, in <b>ARMAC: Advanced Robotics, Mechatronics and Automatic Control</b>.</li>
+                <li><b>Project</b> at FEMTO-ST, a CNRS research institute in Besancon, together with SUPMICROTECH, the national engineering school for mechanics and microtechnology.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="edu" data-lane="0" style="--kind: var(--blue); --lane: 0">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r3">
+                <span class="row__date">02/2026 to now</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">MSc, Applied Computer Science</span><span class="row__org">Cracow University of Technology</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r3"><div><ul>
+                <li>Master's degree, started straight after my BEng defence.</li>
+                <li>Focus on computer vision, efficient models for edge hardware and engineering automation.</li>
+                <li>Includes the Erasmus semester in Besancon.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="club" data-lane="2" style="--kind: var(--green); --lane: 2">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r4">
+                <span class="row__date">05/2025</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">Collaborate, powered by Universal Robots</span><span class="row__org">Tauron Arena, Krakow</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r4"><div><ul>
+                <li>International event by Universal Robots on collaborative robots (cobots).</li>
+                <li>Talks and live demos on how cobots are deployed alongside people in industry.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="work" data-lane="1" data-ongoing style="--kind: var(--marigold); --lane: 1">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r5">
+                <span class="row__date">01/2025 to now</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">Co-founder &amp; CTO</span><span class="row__org">Med-tech R&amp;D, with the National Institute of Oncology, Krakow</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r5"><div><ul>
+                <li>Two-person R&amp;D venture building <b>personalised brachytherapy applicators</b>, designed from each patient's CT scan and 3D-printed in medical-grade polymer.</li>
+                <li><b>Full pipeline.</b> DICOM segmentation on the Hounsfield scale, mesh and STL export, applicator modelling with catheter channels, treatment-planning simulation, printing and clinical QA.</li>
+                <li><b>Automation.</b> A Blender Python API add-on that generates and inspects the catheter channels.</li>
+                <li><b>Material.</b> Spectrum Medical ABS (USP Class VI, ISO 10993-1), autoclave-safe.</li>
+                <li class="impact">6 applicators delivered, 100% passed clinical QA; CAD preparation time cut by more than 50%.</li>
+                <li><a class="link" href="#p-brachy" data-project-open="p-brachy">Open the project ↗</a></li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="edu" data-lane="0" style="--kind: var(--blue); --lane: 0">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r6">
+                <span class="row__date">03/2024 to 06/2024</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">Open Photography Studies</span><span class="row__org">Faculty of Architecture, Cracow University of Technology</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r6"><div><ul>
+                <li>Photography course run by the Faculty of Architecture: composition, lighting and image analysis.</li>
+                <li>The visual side of my computer-vision work.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="cert" data-lane="3" style="--kind: var(--red); --lane: 3">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r7">
+                <span class="row__date">02/2024</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">English, C1 certificate</span><span class="row__org">Language Centre, Cracow University of Technology (SJO PK)</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r7"><div><ul>
+                <li>Passed on 7 February 2024, at C1 level of the Common European Framework of Reference for Languages.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="club" data-lane="2" style="--kind: var(--green); --lane: 2">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r8">
+                <span class="row__date">09/2023</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">HackYeah 2023, Game Jam</span><span class="row__org">Europe's largest hackathon, Krakow</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r8"><div><ul>
+                <li>HackYeah is Europe's largest stationary hackathon, held every year in Krakow.</li>
+                <li>In its 24-hour Game Jam track I built the game mechanics and logic.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="edu" data-lane="0" style="--kind: var(--blue); --lane: 0">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r9">
+                <span class="row__date">2022 to 2026</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">BEng, Applied Computer Science</span><span class="row__org">Cracow University of Technology, thesis defended 02/2026</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r9"><div><ul>
+                <li>Engineering degree at the Faculty of Mechanical Engineering, covering programming, artificial intelligence, embedded systems and networks.</li>
+                <li><b>Thesis.</b> AI vision conveyor sorter: 3D-printed mechanics, a KiCad circuit and a YOLO model quantised to INT8, running on the camera sensor of a Raspberry Pi 5.</li>
+                <li class="impact">96% classification and sorting accuracy on moving objects.</li>
+                <li><a class="link" href="#work" data-project-open="p-sorter">Read the case study →</a></li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="work" data-lane="1" style="--kind: var(--marigold); --lane: 1">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r10">
+                <span class="row__date">07/2022 to 09/2022</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">IT &amp; Industrial Systems Programmer</span><span class="row__org">Dan Cake, Chrzanow</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r10"><div><ul>
+                <li>Summer role at Dan Cake, a large industrial bakery producing cakes and biscuits.</li>
+                <li><b>Logistics.</b> Shipped an app that reads industrial scanner labels on the production lines and flags pallets that need reinforcement.</li>
+                <li><b>Monitoring.</b> Real-time views of raw-material silos and tanks, and of production-line status and throughput, reading directly from Siemens PLCs.</li>
+                <li><b>Tools.</b> Line-traffic manager comparing PLC scanner data with files on the PC, and a CRUD database app for a small warehouse.</li>
+                <li class="impact">Eliminated losses from products crushed under load.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="cert" data-lane="3" style="--kind: var(--red); --lane: 3">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r11">
+                <span class="row__date">2021 to 2022</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">EE.08 and EE.09 qualifications</span><span class="row__org">Polish national vocational qualifications for IT technicians</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r11"><div><ul>
+                <li><b>EE.09, 03/2022.</b> Programming, creating and administering websites and databases.</li>
+                <li><b>EE.08, 09/2021.</b> Assembling and operating computer systems, peripherals and networks.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="work" data-lane="1" style="--kind: var(--marigold); --lane: 1">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r12">
+                <span class="row__date">11/2020</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">IT Support</span><span class="row__org">Trzebinia Cultural Centre</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r12"><div><ul>
+                <li>Network troubleshooting, software installation and updates, hardware upgrades and maintenance, and day-to-day technical support.</li>
+              </ul></div></div>
+            </li>
+            <li class="row" data-kind="edu" data-lane="0" style="--kind: var(--blue); --lane: 0">
+              <button class="row__head" type="button" aria-expanded="false" aria-controls="r13">
+                <span class="row__date">2018 to 2022</span>
+                <span class="row__stop" aria-hidden="true"></span>
+                <span class="row__main"><span class="row__title">IT Technician</span><span class="row__org">Technical secondary school, Trzebinia</span></span>
+                <span class="row__plus" aria-hidden="true"></span>
+              </button>
+              <div class="row__body" id="r13"><div><ul>
+                <li>Four-year technical programme in computer systems, networks and programming, where I earned the EE.08 and EE.09 qualifications.</li>
+              </ul></div></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== 3 WORK
+         Project cards grouped by category; each opens its write-up in the
+         project window (js/window.js). -->
+    <section class="panel panel--work s-marigold" id="work" data-scheme="marigold" data-title="Projects" aria-labelledby="work-title">
+      <div class="panel__inner">
+        <div class="work">
+          <!-- An index like a catalogue: numbered projects on the left, a stepped
+               statement and a live preview of the hovered project on the right.
+               A project opens below, in place of the index (js/projects.js). -->
+          <div class="windex">
+            <div class="windex__list">
+              <!-- Skill filters: one at a time; matching projects stay, the rest hide -->
+              <div class="segment skillbar" role="group" aria-label="Show projects by skill">
+                <button type="button" data-skill="all" aria-pressed="true">All <span class="count">12</span></button>
+                <button type="button" data-skill="ai" aria-pressed="false">AI and vision <span class="count">5</span></button>
+                <button type="button" data-skill="cad" aria-pressed="false">3D, CAD and printing <span class="count">5</span></button>
+                <button type="button" data-skill="elec" aria-pressed="false">Electronics <span class="count">3</span></button>
+                <button type="button" data-skill="data" aria-pressed="false">Data <span class="count">3</span></button>
+                <button type="button" data-skill="sim" aria-pressed="false">Simulation <span class="count">1</span></button>
+                <button type="button" data-skill="app" aria-pressed="false">Apps <span class="count">2</span></button>
+              </div>
+              <p class="windex__cols label"><span>No.</span><span>Project</span><span>Year</span></p>
+              <section class="windex__group" data-cat="eng" aria-labelledby="wg-eng">
+                <h3 class="windex__cat" id="wg-eng"><span>Engineering</span><span class="label">Med-tech, hardware, industry</span></h3>
+                <ol>
+                  <li><button class="wrow" type="button" data-project-open="p-brachy" data-skills="cad data" data-kind="Startup" data-desc="Patient-specific applicators for skin radiotherapy, designed from CT scans with the National Institute of Oncology." data-tags="DICOM, Blender API, 3D printing"><span class="wrow__no">01</span><span class="wrow__title snake-host">Personalised brachytherapy applicators</span><span class="wrow__end"><span class="wrow__year">2025 to now</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-sorter" data-skills="ai cad elec" data-kind="BEng thesis, flagship" data-desc="A conveyor that sorts by sight: YOLO quantised to run on the camera chip, a KiCad circuit and every part printed and assembled by me." data-tags="YOLO, INT8, KiCad, Fusion 360"><span class="wrow__no">02</span><span class="wrow__title snake-host">AI vision conveyor sorter</span><span class="wrow__end"><span class="wrow__year">2026</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-pot" data-skills="elec cad" data-kind="Mechatronics" data-desc="Measures the soil and waters the plant by itself, in a 3D-printed enclosure I designed." data-tags="Arduino, SolidWorks, FDM"><span class="wrow__no">03</span><span class="wrow__title snake-host">Self-watering plant pot</span><span class="wrow__end"><span class="wrow__year">2025</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-print" data-skills="cad" data-kind="Fabrication" data-desc="Parts that have to fit and hold: repairs, fittings, drivetrains and medical-grade prototypes." data-tags="Bambu Lab X1C, Creo, FDM"><span class="wrow__no">04</span><span class="wrow__title snake-host">Functional 3D printing</span><span class="wrow__end"><span class="wrow__year">2023 to now</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-pallet" data-skills="elec" data-kind="Industry" data-desc="Scanner and PLC software for a bakery line that stopped products being crushed in transit." data-tags="Siemens S7, Python, SQL"><span class="wrow__no">05</span><span class="wrow__title snake-host">Pallet guard and silo monitoring</span><span class="wrow__end"><span class="wrow__year">2022</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                </ol>
+              </section>
+              <section class="windex__group" data-cat="design" aria-labelledby="wg-design">
+                <h3 class="windex__cat" id="wg-design"><span>Design and simulation</span><span class="label">Calculations, drawings, FEM and CFD</span></h3>
+                <ol>
+                  <li><button class="wrow" type="button" data-project-open="p-design" data-skills="cad" data-kind="Machine design" data-desc="A shaft sized from my own load calculations, and a hand wheel and hydraulic cylinder designed down to every part." data-tags="Calculations, Drawing, ISO fits"><span class="wrow__no">06</span><span class="wrow__title snake-host">Machine design coursework</span><span class="wrow__end"><span class="wrow__year">2024 to 2025</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-sim" data-skills="sim" data-kind="Simulation" data-desc="Heat through a chimney, a water jet against a wall and a composite plate taken to its limit, each verified." data-tags="Fluent, Mechanical, CFD"><span class="wrow__no">07</span><span class="wrow__title snake-host">Simulation studies in Ansys</span><span class="wrow__end"><span class="wrow__year">2025</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                </ol>
+              </section>
+              <section class="windex__group" data-cat="ai" aria-labelledby="wg-ai">
+                <h3 class="windex__cat" id="wg-ai"><span>Software and AI</span><span class="label">Apps, data, vision</span></h3>
+                <ol>
+                  <li><button class="wrow" type="button" data-project-open="p-forma" data-skills="ai app" data-kind="Mobile app" data-desc="A fitness app for iOS and Android with an AI coach that reads four weeks of training and plans the next one." data-tags="React Native, Supabase, Gemini"><span class="wrow__no">08</span><span class="wrow__title snake-host">FORMA, AI fitness app</span><span class="wrow__end"><span class="wrow__year">2026</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-ev" data-skills="data" data-kind="Data analysis" data-desc="Three years of Chicago fleet and weather data: winter costs 53% more energy, proven with ANOVA." data-tags="Power BI, DAX, ANOVA"><span class="wrow__no">09</span><span class="wrow__title snake-host">EV fleet efficiency analysis</span><span class="wrow__end"><span class="wrow__year">2026</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-nutri" data-skills="ai app" data-kind="Full-stack" data-desc="Estimates the calories in a meal from one photo, with a vision LLM that never leaves the server." data-tags="React, FastAPI, LLaVA"><span class="wrow__no">10</span><span class="wrow__title snake-host">NutriVision AI</span><span class="wrow__end"><span class="wrow__year">2025</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-ecg" data-skills="ai data" data-kind="Data science" data-desc="A 1D CNN that catches 97.6% of arrhythmias in 87,000 heartbeats, served in a Flask app." data-tags="TensorFlow, Keras, MIT-BIH"><span class="wrow__no">11</span><span class="wrow__title snake-host">ECG anomaly detection</span><span class="wrow__end"><span class="wrow__year">2024</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                  <li><button class="wrow" type="button" data-project-open="p-pose" data-skills="ai" data-kind="Computer vision" data-desc="A webcam coach that counts your repetitions and tells you when your form slips." data-tags="MediaPipe, OpenCV, Python"><span class="wrow__no">12</span><span class="wrow__title snake-host">AI trainer</span><span class="wrow__end"><span class="wrow__year">2024</span><span class="wrow__go" aria-hidden="true">Open <i>→</i></span></span></button></li>
+                </ol>
+              </section>
+              <a class="windex__more link" href="https://github.com/mikolajkurek" target="_blank" rel="noopener">Code and smaller projects on GitHub ↗</a>
+            </div>
+
+            <div class="windex__side">
+              <h2 class="windex__title" id="work-title" tabindex="-1" data-focus aria-label="Twelve things I designed, built and analysed"><span aria-hidden="true">Twelve</span><span aria-hidden="true">things I</span><span aria-hidden="true">designed,</span><span aria-hidden="true">built and</span><span aria-hidden="true">analysed</span></h2>
+              <!-- A short teaser of the project under the pointer, below the
+                   statement; the whole block opens the project -->
+              <div class="windex__preview" aria-live="polite" data-prev-open>
+                <p class="windex__kind label" data-prev-kind></p>
+                <p class="windex__name" data-prev-no></p>
+                <p class="windex__result" data-prev-result></p>
+                <ul class="windex__chips tags" data-prev-tags></ul>
+                <span class="windex__open link">Open the project <span class="arrow" aria-hidden="true">→</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A project opens here, in place of the cards (js/projects.js) -->
+          <div class="detail" hidden>
+            <div class="detail__bar">
+              <button class="btn btn--small" type="button" data-proj-back><span class="arrow" aria-hidden="true">←</span><span class="snake-host">All projects</span></button>
+              <p class="label" data-proj-title></p>
+              <div class="detail__nav">
+                <button class="btn btn--small" type="button" data-proj-prev aria-label="Previous project"><span class="snake-host">Prev</span></button>
+                <button class="btn btn--small" type="button" data-proj-next aria-label="Next project"><span class="snake-host">Next</span></button>
+              </div>
+            </div>
+            <div class="detail__body">
+            <article class="pw" id="p-brachy" data-title="Personalised brachytherapy applicators" hidden>
+              <aside class="pw__side">
+                <p class="label">01 Engineering, startup R&amp;D</p>
+                <h2 class="pw__title">Personalised brachytherapy applicators</h2>
+                <p class="pw__lead">Applicators for skin radiotherapy, designed from each patient's CT scan and 3D-printed in medical-grade polymer. Built in a two-person team with the National Institute of Oncology in Krakow.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Role</dt><dd>Co-founder and CTO: medical imaging, modelling, printing and materials</dd></div>
+                  <div><dt class="label">When</dt><dd>2025 to now</dd></div>
+                  <div><dt class="label">Where</dt><dd>Krakow, with the National Institute of Oncology</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>DICOM</i><i>Hounsfield</i><i>Blender Python</i><i>STL</i><i>Medical ABS</i><i>FDM</i></dd></div>
+                </dl>
+                <p class="pw__links"><a class="link" href="#contact" data-goto="contact">Patient cases are confidential, ask me →</a></p>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Six applicators delivered, every one passed clinical QA.</strong>Together with the National Institute of Oncology in Krakow: applicators designed for individual patients, each one through clinical QA and into treatment.</p></section>
+                <section class="pw__sec"><h3>In numbers</h3><dl class="calc">
+                  <div><dt class="label">Delivered</dt><dd>6 patient-specific applicators, 100% passed QA</dd></div>
+                  <div><dt class="label">Regions</dt><dd>4 confirmed: finger, both ears and the scalp, 3 to 5 catheter channels each</dd></div>
+                  <div><dt class="label">Speed</dt><dd>Under one working week from CT scan to finished applicator</dd></div>
+                  <div><dt class="label">R&amp;D</dt><dd>Since 01/2025, with oncologists, medical physicists and technicians</dd></div>
+                  <div><dt class="label">Material</dt><dd>Spectrum Medical ABS: USP Class VI, ISO 10993-1, safe skin contact up to 30 days, autoclavable</dd></div>
+                </dl></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Skin brachytherapy usually relies on thermoplastic meshes shaped by hand and layered bolus. Catheter guides shift slightly, air gaps stay between applicator and skin, full-face masks cause anxiety and movement, and every case takes repeated time from physicists and technicians.</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps">
+                  <li><span><b>CT data.</b> Patient DICOM images plus the dosimetry specification from the medical physicist.</span></li>
+                  <li><span><b>Reconstruction.</b> Hounsfield-scale segmentation, mesh generation and STL export.</span></li>
+                  <li><span><b>Modelling.</b> Catheter channels at a fixed distance from the skin and shrinkage compensation, automated with my Blender Python add-on.</span></li>
+                  <li><span><b>Planning.</b> Imported into the treatment planning system to simulate the dose.</span></li>
+                  <li><span><b>Printing.</b> After plan approval, in Spectrum Medical ABS (USP Class VI, ISO 10993-1), autoclave-safe.</span></li>
+                  <li><span><b>Clinical QA.</b> Fit verified in the treatment room before the session.</span></li>
+                </ol></section>
+                <section class="pw__sec"><h3>Clinically confirmed</h3><p>Four body regions so far: a distal phalanx (3 channels), the right ear (4), the left ear (3) and the scalp (5, open frame). Anatomical reference points give the same placement in every session, and open-frame designs keep ventilation and field of view. From CT scan to finished applicator takes under a week.</p></section>
+              </div>
+            </article>
+
+            <article class="pw" id="p-sorter" data-title="AI vision conveyor sorter" hidden>
+              <aside class="pw__side">
+                <p class="label">02 Engineering, BEng thesis, flagship</p>
+                <h2 class="pw__title">AI vision conveyor sorter</h2>
+                <p class="pw__lead">A conveyor that sees, classifies and sorts objects on its own, with the neural network running inside the camera sensor. I did every layer myself: the CAD and 3D printing of each part, the circuit in KiCad, the dataset, the YOLO model squeezed into 8 MB, and the software that runs it. I printed and assembled the whole machine myself.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Role</dt><dd>Sole engineer: CAD, 3D printing and assembly, circuit and PCB design, soldering, dataset, model training and quantisation, control software, interface design</dd></div>
+                  <div><dt class="label">When</dt><dd>2025 to 2026, defended 02/2026</dd></div>
+                  <div><dt class="label">Where</dt><dd>Cracow University of Technology, Applied Computer Science</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>YOLOv8n</i><i>Ultralytics</i><i>INT8 quantisation</i><i>Sony IMX500</i><i>Raspberry Pi 5</i><i>Python</i><i>Picamera2</i><i>OpenCV</i><i>KiCad</i><i>Fusion 360</i><i>PETG</i><i>Label Studio</i><i>Albumentations</i><i>Figma</i></dd></div>
+                </dl>
+                <p class="pw__links"><a class="link" href="https://github.com/mikolajkurek" target="_blank" rel="noopener">Code ↗</a><a class="link" href="#contact" data-goto="contact">Thesis on request →</a></p>
+              </aside>
+              <div class="pw__main">
+                <figure class="fig" style="--cols: 1; --ar: 4 / 3"><div class="ph"><button class="ph__img" type="button" data-view="The finished machine"><img src="assets/img/projects/sorter-real.webp" width="1280" height="960" alt="Photo of the finished conveyor sorter with a white belt, blue printed parts and the camera mast." loading="lazy"></button><p class="ph__cap"><b>The finished machine</b>Aluminium frame, blue PETG parts I printed, and the camera mast with the Raspberry Pi.</p></div></figure>
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>96% correct on the real belt, 46 ms per frame.</strong>82 of 85 random trials sorted correctly, mAP@0.5 of 0.995 on validation, and the whole model runs on the camera chip at about 30 frames per second, with the Raspberry Pi CPU left free.</p></section>
+                <figure class="fig" style="--cols: 1; --ar: 1280 / 427"><div class="ph"><button class="ph__img" type="button" data-view="Stop, look, decide"><img src="assets/img/projects/sorter-seq.webp" width="1280" height="427" alt="Four frames of a tea box moving along the belt until the sorter stops it." loading="lazy"></button><p class="ph__cap"><b>Stop, look, decide</b>The belt runs, a box arrives, the belt stops and the light shows the verdict.</p></div></figure>
+                <section class="pw__sec"><h3>In numbers</h3><dl class="calc">
+                  <div><dt class="label">Trials</dt><dd>82 of 85 sorted correctly on the moving belt (96%)</dd></div>
+                  <div><dt class="label">Model</dt><dd>YOLOv8n, 3.2M parameters, FP32 to INT8, 7.06 of 8 MB on the sensor (89%)</dd></div>
+                  <div><dt class="label">Speed</dt><dd>About 46 ms inference, 30 fps; at 10 cm/s the box moves only 4.6 mm before the decision</dd></div>
+                  <div><dt class="label">Data</dt><dd>186 photos I took and labelled, 12 augmented variants each, 7 classes</dd></div>
+                  <div><dt class="label">Accuracy</dt><dd>mAP@0.5 0.995, every class on the diagonal of the confusion matrix</dd></div>
+                  <div><dt class="label">Endurance</dt><dd>60 minutes of continuous loaded running with no lost steps</dd></div>
+                </dl></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Quality control on small production lines usually means PLCs and industrial cameras: expensive, and hard to reconfigure. My thesis asked whether one person could build a sorter from consumer parts that recognises products by how they look, and can be taught new ones in software instead of rebuilding the machine. The test case: five tea flavours, plus damaged and misplaced boxes.</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps">
+                  <li><span><b>Mechanics.</b> A T-slot conveyor with every custom part designed in Fusion 360, printed in PETG and assembled by me.</span></li>
+                  <li><span><b>Electronics.</b> Schematic and PCB designed in KiCad, prototyped on a breadboard, then soldered and calibrated.</span></li>
+                  <li><span><b>Data.</b> My own photo dataset, labelled box by box, balanced and augmented twelve-fold.</span></li>
+                  <li><span><b>Model.</b> YOLOv8n trained with transfer learning on a T4 GPU.</span></li>
+                  <li><span><b>Edge AI.</b> Quantised to INT8 and packed into the 8 MB memory of the Sony IMX500 sensor.</span></li>
+                  <li><span><b>Software.</b> Multithreaded Python control: detection, belt motor, decisions and signal lights.</span></li>
+                  <li><span><b>Interface.</b> An operator dashboard designed in Figma for live monitoring.</span></li>
+                </ol></section>
+                <section class="pw__sec"><h3>Edge AI: a detector in 8 MB</h3><p>The Raspberry Pi AI Camera runs the network on the image sensor itself, so the Pi only receives finished detections, never raw frames to process. The catch is memory: 8 MB for weights, firmware and working buffers together. Of the YOLOv8 family only the Nano version fits; Small already needs 21 MB.</p><ol class="steps">
+                  <li><span><b>Training.</b> Transfer learning from COCO, 640 by 640 input, cosine learning rate, mixed precision. Early stopping ended the run at epoch 75, with the best weights from around epoch 25.</span></li>
+                  <li><span><b>Quantisation.</b> Post-training quantisation from 32-bit floats to 8-bit integers, calibrated on my own images so each layer keeps its range and the accuracy survives.</span></li>
+                  <li><span><b>Fit check.</b> The memory report confirmed 7.06 MB in use, 89% of the chip, before I packed it into the firmware file the camera loads at start.</span></li>
+                  <li><span><b>Workaround.</b> Sony's export tool lost track of file paths and failed; I traced it and found a reliable way around it.</span></li>
+                </ol><figure class="fig" style="--cols: 1; --ar: 2 / 1"><div class="ph"><button class="ph__img" type="button" data-view="Training curves"><img src="assets/img/projects/sorter-train.webp" width="1600" height="800" alt="Ten training plots: box, class and DFL losses for training and validation, plus precision, recall and mAP." loading="lazy"></button><p class="ph__cap"><b>Training curves</b>Losses fall steadily; precision and recall reach close to 1.0 by epoch 25.</p></div></figure><figure class="fig" style="--cols: 1; --ar: 1600 / 1220"><div class="ph"><button class="ph__img" type="button" data-view="Validation predictions"><img src="assets/img/projects/sorter-val.webp" width="1600" height="1220" alt="A grid of validation photos of tea boxes with coloured detection boxes and class labels." loading="lazy"></button><p class="ph__cap"><b>Validation predictions</b>Boxes and labels drawn by the model on images it never trained on.</p></div></figure></section>
+                <section class="pw__sec"><h3>The dataset</h3><p>No dataset existed for this, so I made one: 186 photos, labelled by hand in Label Studio, split 80 to 20 for training and validation. Damaged boxes are rare on a real line, so a model trained on natural data would just call everything fine. I damaged boxes on purpose to keep the classes close to 50 to 50.</p><p>Each training photo became 12 variants in Albumentations: brightness, gamma and colour shifts for changing light, flips, rotation, scale and shear for any position on the belt, and noise and motion blur for a moving object. The validation set stayed untouched, so the scores are honest.</p><figure class="fig" style="--cols: 2; --ar: 1299 / 718"><div class="ph"><button class="ph__img" type="button" data-view="Labelling"><img src="assets/img/projects/sorter-labels.webp" width="1299" height="718" alt="Label Studio screen with bounding boxes drawn around a tea box and a damaged box." loading="lazy"></button><p class="ph__cap"><b>Labelling</b>Box by box in Label Studio.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Augmentation"><img src="assets/img/projects/sorter-aug.webp" width="1299" height="576" alt="Grid of twelve augmented versions of one tea box photo with different light, angle and colour." loading="lazy"></button><p class="ph__cap"><b>Augmentation</b>Twelve variants from one photo.</p></div></figure><figure class="fig" style="--cols: 1; --ar: 1299 / 974"><div class="ph"><button class="ph__img" type="button" data-view="Confusion matrix"><img src="assets/img/projects/sorter-cm.webp" width="1299" height="974" alt="Normalised confusion matrix with 1.00 on the diagonal for all seven classes." loading="lazy"></button><p class="ph__cap"><b>Confusion matrix</b>Every class recognised, no flavour mistaken for another.</p></div></figure></section>
+                <section class="pw__sec"><h3>Circuit design in KiCad</h3><p>A board between the 3.3 V logic of the Pi and the 12 V motor. I drew the schematic and laid out the PCB in KiCad, keeping the logic and power sides apart, then checked the 3D model for collisions before building anything.</p><ol class="steps">
+                  <li><span><b>Motor driver.</b> DRV8825 with microstepping for a smooth belt, so the camera image stays sharp.</span></li>
+                  <li><span><b>Power cut-off.</b> An N-channel MOSFET switches the motor off completely: about 0 mA when idle.</span></li>
+                  <li><span><b>Protection.</b> A 47 µF capacitor against voltage spikes; 220 Ω resistors keep each LED at a safe 10 to 15 mA for the GPIO.</span></li>
+                  <li><span><b>Calibration.</b> Set the driver's reference voltage to 242 mV with a multimeter, limiting the motor to 0.48 A so it runs cool.</span></li>
+                </ol><figure class="fig" style="--cols: 2; --ar: 1396 / 1100"><div class="ph"><button class="ph__img" type="button" data-view="Schematic"><img src="assets/img/projects/sorter-schematic.webp" width="1600" height="1088" alt="KiCad schematic with the DRV8825 driver, an N-channel MOSFET, three LEDs and screw terminals." loading="lazy"></button><p class="ph__cap"><b>Schematic</b>Driver, MOSFET switch and status LEDs.</p></div><div class="ph"><button class="ph__img" type="button" data-view="PCB layout"><img src="assets/img/projects/sorter-pcb.webp" width="1396" height="1100" alt="KiCad PCB layout with copper traces, the driver footprint, LEDs and connectors." loading="lazy"></button><p class="ph__cap"><b>PCB layout</b>Logic and 12 V paths kept apart.</p></div></figure><figure class="fig" style="--cols: 2; --ar: 1414 / 1154"><div class="ph"><button class="ph__img" type="button" data-view="3D check"><img src="assets/img/projects/sorter-pcb3d.webp" width="1414" height="1154" alt="3D render of the circuit board with the driver socket, red LEDs, capacitor and MOSFET." loading="lazy"></button><p class="ph__cap"><b>3D check</b>Collisions checked before building.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Breadboard first"><img src="assets/img/projects/sorter-breadboard.webp" width="790" height="1053" alt="Breadboard prototype wired to the Raspberry Pi and the camera cable." loading="lazy"></button><p class="ph__cap"><b>Breadboard first</b>Every signal tested before soldering.</p></div></figure><figure class="fig" style="--cols: 1; --ar: 1299 / 460"><div class="ph"><button class="ph__img" type="button" data-view="Soldered board"><img src="assets/img/projects/sorter-board.webp" width="1299" height="460" alt="Front and back of the soldered prototype board with the driver, LEDs and screw terminals." loading="lazy"></button><p class="ph__cap"><b>Soldered board</b>Front and back of the finished board, soldered by me.</p></div></figure></section>
+                <section class="pw__sec"><h3>Mechanics, printed and assembled by me</h3><p>The frame is 30x30 aluminium T-slot. Every other part I designed in Fusion 360 and printed in PETG on a Bambu Lab X1C: 0.2 mm layers, 15% gyroid infill and four walls around threads and bearing seats. The rollers turn on 608ZZ bearings; a NEMA 17 stepper drives the belt through a GT2 belt and 40 to 30 tooth pulleys, so the speed is exact without an encoder. Sliding the motor along the profile tensions the belt, no extra tensioner needed.</p><figure class="fig" style="--cols: 2; --ar: 1 / 1"><div class="ph"><button class="ph__img" type="button" data-view="The conveyor"><img src="assets/img/projects/sorter-3d.webp" width="2000" height="2000" alt="Render of the sorting conveyor: aluminium frame, yellow 3D-printed rollers and the camera mast with a Raspberry Pi." loading="lazy"></button><p class="ph__cap"><b>The conveyor</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Top view"><img src="assets/img/projects/sorter-top.webp" width="2000" height="2000" alt="Top view render of the conveyor belt with the camera mast above it." loading="lazy"></button><p class="ph__cap"><b>Top view</b>The camera mast sits over the middle of the belt.</p></div></figure><figure class="fig" style="--cols: 2; --ar: 1299 / 787"><div class="ph"><button class="ph__img" type="button" data-view="Drive"><img src="assets/img/projects/sorter-drive.webp" width="1101" height="667" alt="Photo of the stepper motor, GT2 belt and orange printed pulleys on the blue side plate." loading="lazy"></button><p class="ph__cap"><b>Drive</b>NEMA 17, GT2 belt and printed pulleys.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Slicing"><img src="assets/img/projects/sorter-slicer.webp" width="1299" height="787" alt="Bambu Studio with the printed rollers laid out on the build plate." loading="lazy"></button><p class="ph__cap"><b>Slicing</b>Print settings tuned in Bambu Studio.</p></div></figure></section>
+                <section class="pw__sec"><h3>Parts I designed, printed and assembled</h3><p>Every printed part has its own technical drawing, made in Fusion 360 in December 2025. Click one to open it.</p><figure class="fig fig--drawings" style="--cols: 3; --ar: 2400 / 1553"><div class="ph"><button class="ph__img" type="button" data-view="Corner bracket 30x30"><img src="assets/img/projects/sorter-parts/katownik.webp" width="2400" height="1553" alt="Technical drawing of the corner bracket 30x30." loading="lazy"></button><p class="ph__cap"><b>Corner bracket 30x30</b>Joins the 30x30 aluminium profiles of the frame.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Belt drive roller"><img src="assets/img/projects/sorter-parts/walek-tasma.webp" width="2400" height="1553" alt="Technical drawing of the belt drive roller." loading="lazy"></button><p class="ph__cap"><b>Belt drive roller</b>Drives the belt; split hub clamps onto the motor shaft.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Side plate"><img src="assets/img/projects/sorter-parts/plyta-boczna.webp" width="2400" height="1553" alt="Technical drawing of the side plate." loading="lazy"></button><p class="ph__cap"><b>Side plate</b>Holds the rollers and sets the belt tension.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Support roller"><img src="assets/img/projects/sorter-parts/walek-podporowy.webp" width="2400" height="1553" alt="Technical drawing of the support roller." loading="lazy"></button><p class="ph__cap"><b>Support roller</b>Keeps the belt flat under the camera.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Motor mount"><img src="assets/img/projects/sorter-parts/mocowanie-silnika.webp" width="2400" height="1553" alt="Technical drawing of the motor mount." loading="lazy"></button><p class="ph__cap"><b>Motor mount</b>Bolts the drive motor to the frame.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Camera mount"><img src="assets/img/projects/sorter-parts/mocowanie-kamery.webp" width="2400" height="1553" alt="Technical drawing of the camera mount." loading="lazy"></button><p class="ph__cap"><b>Camera mount</b>Mast with a snap-fit sliding lid for the camera.</p></div></figure></section>
+                <section class="pw__sec"><h3>Control software</h3><p>Python 3.11 on Raspberry Pi OS. The camera thread reads detections straight from the sensor's metadata every 0.1 s and signals the main loop; a lock keeps the shared results consistent, so the motor never stutters while the camera works.</p><ol class="steps">
+                  <li><span><b>Run.</b> Green light, belt moving.</span></li>
+                  <li><span><b>Detect.</b> A box appears: the motor is cut within milliseconds, holding it under the camera.</span></li>
+                  <li><span><b>Decide.</b> The most confident detection wins: yellow for a good box, red for a damaged or misplaced one, then the belt restarts.</span></li>
+                </ol><p>What counts as a defect is a single list in the config, so the sorting rules change without touching the control loop. The confidence threshold is 0.80, just below the F1 peak of 0.84, to favour catching every box in motion.</p></section>
+                <section class="pw__sec"><h3>Operator dashboard</h3><p>A high-fidelity interface designed in Figma for a separate operator terminal: live camera view with detections, an event log with class and confidence, detections per hour and class distribution, and CPU, RAM and uptime of the controller.</p><figure class="fig" style="--cols: 1; --ar: 1440 / 900"><div class="ph"><button class="ph__img" type="button" data-view="Dashboard"><img src="assets/img/projects/sorter-dash.webp" width="1440" height="900" alt="Operator dashboard with a camera preview, detection log table and bar and line charts." loading="lazy"></button><p class="ph__cap"><b>Dashboard</b>Camera view, detection log and production charts on one screen.</p></div></figure></section>
+                <section class="pw__sec"><h3>Problems I solved</h3><ol class="steps">
+                  <li><span><b>Glare.</b> Glossy boxes reflected the overhead light and hid the damage; side lighting moved the reflections out of the lens and made dents cast shadows.</span></li>
+                  <li><span><b>Rare defects.</b> Balanced the classes by creating the damage myself instead of waiting for it.</span></li>
+                  <li><span><b>The 3 misses.</b> All were damaged boxes whose torn side was outside the frame. Not a model error: the next step is a guide that centres boxes before the camera.</span></li>
+                </ol></section>
+              </div>
+            </article>
+
+            <article class="pw" id="p-pot" data-title="Self-watering plant pot" hidden>
+              <aside class="pw__side">
+                <p class="label">03 Engineering, mechatronics</p>
+                <h2 class="pw__title">Self-watering plant pot</h2>
+                <p class="pw__lead">A pot that measures how dry the soil is and waters the plant by itself, with the reading on its own display. Built in a two-person team for the Mechatronics course.</p>
+                <dl class="pw__facts"><div><dt class="label">Role</dt><dd>Electronics, Arduino code, enclosure design and 3D printing</dd></div><div><dt class="label">When</dt><dd>2025</dd></div><div><dt class="label">Where</dt><dd>Cracow University of Technology</dd></div><div><dt class="label">Stack</dt><dd class="tags"><i>Arduino Uno R4</i><i>C++</i><i>MOSFET</i><i>I2C LCD</i><i>SolidWorks</i><i>FDM</i></dd></div></dl>
+              </aside>
+              <div class="pw__main">
+                <figure class="fig" style="--cols: 2; --ar: 762 / 920"><div class="ph"><button class="ph__img" type="button" data-view="Front"><img src="assets/img/projects/pot-front.webp" width="762" height="920" alt="The green 3D-printed unit holding a glass water jar, with a tube running to an ivy plant." loading="lazy"></button><p class="ph__cap"><b>Front</b>The cradle holds the water jar; the tube runs to the plant.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Back"><img src="assets/img/projects/pot-back.webp" width="768" height="905" alt="The back of the unit: a perforated slide-in panel and the on-off switch." loading="lazy"></button><p class="ph__cap"><b>Back</b>A slide-in panel gives access to the electronics.</p></div></figure>
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Plants watered with nobody home.</strong>The pot checks the soil, waters in short bursts and checks again until the moisture is right, showing the level on its display the whole time.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>House plants dry out whenever nobody is around to water them. We wanted a small, good-looking unit that sits next to the pot and takes care of it.</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps"><li><span><b>Sensing.</b> A resistive soil-moisture sensor on an analog input, turned into a percentage.</span></li><li><span><b>Display.</b> The reading shown on a 16x2 LCD over I2C.</span></li><li><span><b>Pump.</b> A 5 W water pump switched by an N-channel MOSFET.</span></li><li><span><b>Logic.</b> Below the threshold it waters for 5 s, waits 2 minutes for the water to soak in and measures again.</span></li><li><span><b>Enclosure.</b> Designed in SolidWorks and 3D printed: a slide-in panel, a cradle for the water jar, the display on top and the switch on the side.</span></li></ol></section>
+                <figure class="fig" style="--cols: 2; --ar: 3 / 4"><div class="ph"><button class="ph__img" type="button" data-view="On the display"><img src="assets/img/projects/pot-top.webp" width="898" height="1197" alt="View from above: the display reads the soil moisture as a percentage next to the water jar." loading="lazy"></button><p class="ph__cap"><b>On the display</b>Soil moisture, live, as a percentage.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Inside"><img src="assets/img/projects/pot-inside.webp" width="1536" height="2048" alt="The open enclosure with the Arduino, breadboard, sensor and pump wiring laid out." loading="lazy"></button><p class="ph__cap"><b>Inside</b>Arduino, MOSFET, pump and sensor before closing it up.</p></div></figure>
+                <section class="pw__sec"><h3>Circuit and enclosure</h3><p>The circuit was planned on a breadboard first, with the pump drawn as a motor; the enclosure was modelled around it.</p><figure class="fig" style="--cols: 2; --ar: 1 / 1"><div class="ph"><button class="ph__img" type="button" data-view="Wiring"><img src="assets/img/projects/pot-wiring.webp" width="1378" height="941" alt="Wiring diagram: Arduino Uno, breadboard, soil sensor, LCD, MOSFET, pump and battery." loading="lazy"></button><p class="ph__cap"><b>Wiring</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Enclosure in SolidWorks"><img src="assets/img/projects/pot-render.webp" width="546" height="747" alt="SolidWorks render of the enclosure with its round cradle and perforated pattern." loading="lazy"></button><p class="ph__cap"><b>Enclosure in SolidWorks</b></p></div></figure></section>
+
+              </div>
+            </article>
+
+            <article class="pw" id="p-print" data-title="Functional 3D printing" hidden>
+              <aside class="pw__side">
+                <p class="label">04 Engineering, design and fabrication</p>
+                <h2 class="pw__title">Functional 3D printing</h2>
+                <p class="pw__lead">Most of my hardware starts on a printer. Two years of daily use taught me to design for printing, not just to print designs.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Printer</dt><dd>Bambu Lab X1C, about two years</dd></div>
+                  <div><dt class="label">Modelling</dt><dd>Fusion 360, Creo, SolidWorks, Blender</dd></div>
+                  <div><dt class="label">Simulation</dt><dd>Ansys Fluent</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>FDM</i><i>Slicers</i><i>Medical ABS</i><i>Ansys</i></dd></div>
+                </dl>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Parts that fit, hold and get used.</strong>More than two years of functional printing, from everyday repairs to medical-grade prototypes.</p></section>
+                <section class="pw__sec"><h3>What I have made</h3><ol class="steps">
+                  <li><span><b>Everyday parts.</b> Valves, brackets and hooks.</span></li>
+                  <li><span><b>Outdoors.</b> Greenhouse fittings and gutter-system components.</span></li>
+                  <li><span><b>Repairs.</b> Replacement parts for broken objects.</span></li>
+                  <li><span><b>Robotics.</b> Every printed part of the AI vision sorter, and the enclosure of a self-watering plant pot.</span></li>
+                  <li><span><b>Med-tech.</b> Patient-specific applicators in medical-grade ABS.</span></li>
+                </ol></section>
+                <section class="pw__sec"><h3>How I work</h3><p>I tune slicer settings, materials and print parameters for dimensional accuracy, including shrinkage compensation for clinical parts. On the CAD side I model and draw parts to standard (see the machine design coursework) and have run Ansys Fluent studies on heat flow, water-jet impact and a loaded composite plate.</p></section>
+              </div>
+            </article>
+
+            <article class="pw" id="p-pallet" data-title="Pallet guard and silo monitoring" hidden>
+              <aside class="pw__side">
+                <p class="label">05 Engineering, industry</p>
+                <h2 class="pw__title">Pallet guard and silo monitoring</h2>
+                <p class="pw__lead">A summer on the production floor of Dan Cake, a large industrial bakery, writing software between scanners, PLCs and the people running the lines.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Role</dt><dd>IT and industrial systems programmer</dd></div>
+                  <div><dt class="label">When</dt><dd>07/2022 to 09/2022</dd></div>
+                  <div><dt class="label">Where</dt><dd>Dan Cake, Chrzanow</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>Siemens S7</i><i>Python</i><i>SQL</i><i>Industrial scanners</i></dd></div>
+                </dl>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>No more crushed pallets.</strong>Products at the bottom of heavy pallets stopped getting damaged in transit, and the silos gained a live view of raw-material levels.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Products at the bottom of heavy pallets were crushed in transit, raw-material levels had no live overview, and line data lived in two places that did not always agree.</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps">
+                  <li><span><b>Pallet guard.</b> Reads each label from the industrial scanner and signals when a pallet needs reinforcement.</span></li>
+                  <li><span><b>Silo view.</b> Real-time levels of silos and raw-material tanks, straight from the Siemens PLCs.</span></li>
+                  <li><span><b>Line view.</b> Status and throughput of the production lines.</span></li>
+                  <li><span><b>Traffic manager.</b> Compares scanner data on the PLC with files on the PC.</span></li>
+                  <li><span><b>Warehouse app.</b> A small CRUD database application.</span></li>
+                </ol></section>
+              </div>
+            </article>
+
+            <article class="pw" id="p-design" data-title="Machine design coursework" hidden>
+              <aside class="pw__side">
+                <p class="label">06 Design and simulation, machine design</p>
+                <h2 class="pw__title">Machine design coursework</h2>
+                <p class="pw__lead">A shaft, a hand wheel and a hydraulic cylinder, designed, modelled and documented by me: from the load calculations to drawings and product cards a manufacturer could work from.</p>
+                <dl class="pw__facts"><div><dt class="label">Role</dt><dd>Calculations, 3D modelling and technical documentation</dd></div><div><dt class="label">When</dt><dd>2024 to 2025</dd></div><div><dt class="label">Where</dt><dd>Cracow University of Technology</dd></div><div><dt class="label">Stack</dt><dd class="tags"><i>CAD</i><i>Excel</i><i>ISO fits</i><i>GD&amp;T</i></dd></div></dl>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>From load case to drawing.</strong>For the shaft I calculated the forces and moments, sized every diameter and turned the result into a workshop drawing; for the wheel and the cylinder I designed every component and wrote the product cards.</p></section>
+                <section class="pw__sec"><h3>Two-bearing shaft</h3><p>A gearbox shaft carrying two helical gears. In a calculation sheet I worked out the gear forces, the bearing reactions in both planes and the bending moments, combined them with the torque into a reduced moment and sized each section of the shaft from it.</p><dl class="calc">
+                  <div><dt class="label">Input</dt><dd>12 kW at 750 rpm, helical gears d1 = 160 mm and d2 = 71.1 mm, helix angles 10° and 20°</dd></div>
+                  <div><dt class="label">Torque</dt><dd>152.8 Nm</dd></div>
+                  <div><dt class="label">Gear forces</dt><dd>Tangential 1,910 N and 4,298 N, radial 706 N and 1,665 N, axial 337 N and 1,564 N</dd></div>
+                  <div><dt class="label">Peak moment</dt><dd>304.6 Nm reduced moment at gear C (bending and torsion combined, α = 0.83)</dd></div>
+                  <div><dt class="label">Diameters</dt><dd>35.2 mm theoretical minimum, rounded up to a stepped Ø35, 38, 42 and 45 mm shaft</dd></div>
+                </dl></section>
+                <figure class="fig fig--chart" style="--cols: 1"><svg class="moment" viewBox="0 0 640 260" role="img" aria-label="Reduced bending moment along the shaft: 0 Nm at bearing A, 244.7 Nm at gear B, 304.6 Nm at gear C, 0 Nm at bearing D.">
+                  <line class="moment__axis" x1="40" y1="210" x2="610" y2="210"/>
+                  <polygon class="moment__area" points="40,210 230,48 230,57 444,40 444,26 610,210"/>
+                  <polyline class="moment__line" points="40,210 230,48 230,57 444,40 444,26 610,210"/>
+                  <g class="moment__pts"><circle cx="40" cy="210" r="5"/><circle cx="230" cy="48" r="5"/><circle cx="444" cy="26" r="5"/><circle cx="610" cy="210" r="5"/></g>
+                  <g class="moment__lbl"><text x="40" y="236">A, bearing</text><text x="230" y="236" text-anchor="middle">B, gear 1</text><text x="444" y="236" text-anchor="middle">C, gear 2</text><text x="610" y="236" text-anchor="end">D, bearing</text>
+                  <text x="214" y="38" text-anchor="end">244.7 Nm</text><text x="456" y="20">304.6 Nm</text></g>
+                  <g class="moment__dim"><text x="135" y="200">a = 80 mm</text><text x="337" y="200">b = 90 mm</text><text x="527" y="200">c = 70 mm</text></g>
+                </svg><figcaption class="label">Reduced bending moment along the shaft, from my calculation sheet</figcaption></figure>
+                <figure class="fig fig--drawings" style="--cols: 1; --ar: 2400 / 1697"><div class="ph"><button class="ph__img" type="button" data-view="Workshop drawing, 06/2024"><img src="assets/img/projects/shaft.webp" width="2400" height="1697" alt="Technical drawing of the two-bearing shaft with keyways, fits, geometric tolerances and surface roughness." loading="lazy"></button><p class="ph__cap"><b>Workshop drawing, 06/2024</b>S235JR steel, k6 and p6 fits, 10N9 keyways, run-out tolerances, Ra 0.8 at the bearing seats.</p></div></figure>
+                <section class="pw__sec"><h3>Hand wheel with a folding handle</h3><p>A machine hand wheel whose revolving handle folds away when it is not needed. I modelled the wheel and every part of the handle: the glass-fibre reinforced polyamide grip, the oxidised steel pin, the spring that holds it and the screw that closes it.</p><figure class="fig" style="--cols: 2; --ar: 1 / 1.1"><div class="ph"><button class="ph__img" type="button" data-view="Hand wheel"><img src="assets/img/projects/wheel.webp" width="1384" height="1324" alt="Render of the black hand wheel with its handle upright." loading="lazy"></button><p class="ph__cap"><b>Hand wheel</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Wheel, Ø171 mm"><img src="assets/img/projects/wheel-dims.webp" width="1400" height="1697" alt="Section and top view of the hand wheel with its dimensions, 171 mm across." loading="lazy"></button><p class="ph__cap"><b>Wheel, Ø171 mm</b></p></div></figure><figure class="fig" style="--cols: 3; --ar: 3 / 5"><div class="ph"><button class="ph__img" type="button" data-view="Handle"><img src="assets/img/projects/handle.webp" width="824" height="2121" alt="Render of the revolving handle." loading="lazy"></button><p class="ph__cap"><b>Handle</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Handle section"><img src="assets/img/projects/handle-dims.webp" width="721" height="2116" alt="Section of the handle showing the spring inside, with dimensions." loading="lazy"></button><p class="ph__cap"><b>Handle section</b>The spring that holds the pin sits inside the grip.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Exploded handle"><img src="assets/img/projects/handle-exploded.webp" width="826" height="1656" alt="Exploded view of the handle: screw, spring, grip and pin." loading="lazy"></button><p class="ph__cap"><b>Exploded handle</b>Screw, spring, grip and pin.</p></div></figure></section>
+                <section class="pw__sec"><h3>Double-acting hydraulic cylinder</h3><p>A cylinder for machine hydraulics: 90 mm bore, 50 mm rod, 400 mm stroke, 715 mm between the eyes when retracted, rated for 250 bar from −20 to +80 °C.</p><figure class="fig" style="--cols: 1; --ar: 1600 / 767"><div class="ph"><button class="ph__img" type="button" data-view="Hydraulic cylinder"><img src="assets/img/projects/cylinder.webp" width="1600" height="767" alt="Render of the double-acting hydraulic cylinder." loading="lazy"></button><p class="ph__cap"><b>Hydraulic cylinder</b></p></div></figure><figure class="fig fig--drawings" style="--cols: 1; --ar: 1600 / 1063"><div class="ph"><button class="ph__img" type="button" data-view="Cylinder dimensions"><img src="assets/img/projects/cylinder-dims.webp" width="1600" height="1063" alt="Side and top views of the cylinder with its dimensions." loading="lazy"></button><p class="ph__cap"><b>Cylinder dimensions</b></p></div></figure></section>
+
+              </div>
+            </article>
+
+            <article class="pw" id="p-sim" data-title="Simulation studies in Ansys" hidden>
+              <aside class="pw__side">
+                <p class="label">07 Design and simulation, FEM and CFD</p>
+                <h2 class="pw__title">Simulation studies in Ansys</h2>
+                <p class="pw__lead">Three studies from my simulation courses: heat through a chimney wall, a water jet hitting a wall and a composite plate loaded to its limit. Each one checked against a balance or a finer mesh, not just trusted.</p>
+                <dl class="pw__facts"><div><dt class="label">Role</dt><dd>Modelling, meshing, solving and verification</dd></div><div><dt class="label">When</dt><dd>2025</dd></div><div><dt class="label">Where</dt><dd>Cracow University of Technology</dd></div><div><dt class="label">Stack</dt><dd class="tags"><i>Ansys Fluent</i><i>Ansys Mechanical</i><i>k-epsilon</i><i>Orthotropic materials</i></dd></div></dl>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Errors below 0.002%.</strong>The energy balance closed to 0.0018% in the heat study and the mass balance to 0.00003% in the flow study; refining the mesh cut the remaining temperature error more than tenfold.</p></section>
+                <section class="pw__sec"><h3>Heat through a chimney</h3><p>Steady conduction through a dolomite chimney wall in Fluent. The cross-section is symmetric, so I modelled a quarter of it with symmetry planes. A shell mesh with ideal skewness and orthogonal quality converged in about ten iterations; the energy balance closed to 0.0018%, and refining the mesh from 0.5 to 0.25 mm brought the error at the check points from 0.31% to 0.03%.</p><figure class="fig" style="--cols: 2; --ar: 1.2 / 1"><div class="ph"><button class="ph__img" type="button" data-view="Temperature field"><img src="assets/img/projects/sim-chimney.webp" width="1035" height="641" alt="Temperature contour over a quarter of the chimney cross-section, hottest at the inner wall." loading="lazy"></button><p class="ph__cap"><b>Temperature field</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Mesh"><img src="assets/img/projects/sim-chimney-mesh.webp" width="696" height="691" alt="The structured mesh over the quarter section." loading="lazy"></button><p class="ph__cap"><b>Mesh</b></p></div></figure></section>
+                <section class="pw__sec"><h3>Water jet against a wall</h3><p>A water jet leaving a pipe at 4 m/s and hitting a wall, solved as turbulent flow with the k-epsilon model. The default mesher left an irregular patch, so I switched to PrimeMesh quadrilaterals (10,162 elements). With the absolute criteria off the solution settled after about 800 iterations; the mass balance closed to 0.00003% and the jet pushes on the wall with about 0.05 N.</p><figure class="fig" style="--cols: 3; --ar: 2 / 1.1"><div class="ph"><button class="ph__img" type="button" data-view="Velocity"><img src="assets/img/projects/sim-jet.webp" width="1127" height="557" alt="Velocity contour: the jet leaves the pipe on the left and spreads along the wall." loading="lazy"></button><p class="ph__cap"><b>Velocity</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Velocity vectors"><img src="assets/img/projects/sim-jet-vectors.webp" width="921" height="488" alt="Velocity vectors turning at the wall around the stagnation point." loading="lazy"></button><p class="ph__cap"><b>Velocity vectors</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Mesh"><img src="assets/img/projects/sim-jet-mesh.webp" width="1005" height="563" alt="The quadrilateral mesh around the pipe outlet and the wall." loading="lazy"></button><p class="ph__cap"><b>Mesh</b></p></div></figure></section>
+                <section class="pw__sec"><h3>Composite plate to its limit</h3><p>A plate fixed on one edge and loaded on the other, run in Ansys Mechanical as structural steel, zinc and an orthotropic fibre composite. I compared deformation, equivalent and normal stress and the safety factor, then raised the load until the safety factor fell below 1, at about 107 kN.</p><figure class="fig" style="--cols: 3; --ar: 1.4 / 1"><div class="ph"><button class="ph__img" type="button" data-view="Deformation"><img src="assets/img/projects/sim-plate-deform.webp" width="1400" height="522" alt="Total deformation of the plate under load." loading="lazy"></button><p class="ph__cap"><b>Deformation</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="Equivalent stress"><img src="assets/img/projects/sim-plate-stress.webp" width="1400" height="522" alt="Equivalent stress in the plate." loading="lazy"></button><p class="ph__cap"><b>Equivalent stress</b></p></div><div class="ph"><button class="ph__img" type="button" data-view="At the limit"><img src="assets/img/projects/sim-plate-limit.webp" width="798" height="577" alt="Safety factor at the limit load: minimum 0.93, the red area at the loaded corner is where it first drops below 1." loading="lazy"></button><p class="ph__cap"><b>At the limit</b></p></div></figure></section>
+
+              </div>
+            </article>
+
+            <article class="pw" id="p-forma" data-title="FORMA, AI fitness app" hidden>
+              <aside class="pw__side">
+                <p class="label">08 Software and AI, mobile app</p>
+                <h2 class="pw__title">FORMA, AI fitness app</h2>
+                <p class="pw__lead">A training log for iOS and Android with a built-in AI coach. It reads your last four weeks of sessions, rates the week, plans the next one and warns you before you overtrain. Built in a two-person team.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Role</dt><dd>Architecture, app screens, Supabase backend, Gemini integration, tests and documentation</dd></div>
+                  <div><dt class="label">When</dt><dd>2026</dd></div>
+                  <div><dt class="label">Where</dt><dd>Cracow University of Technology, mobile and embedded systems</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>React Native</i><i>Expo</i><i>TypeScript</i><i>Supabase</i><i>PostgreSQL</i><i>Google Gemini</i><i>Zustand</i><i>React Query</i><i>Victory Native</i><i>Jest</i><i>GitHub Actions</i></dd></div>
+                </dl>
+                <p class="pw__links"><a class="link" href="https://github.com/PK-M-07/sysmobiw-project-p01-02" target="_blank" rel="noopener">Code ↗</a></p>
+              </aside>
+              <div class="pw__main">
+                <figure class="fig" style="--cols: 1; --ar: 4 / 3"><div class="ph"><button class="ph__img" type="button" data-view="FORMA"><img src="assets/img/projects/forma-hero.webp" width="2000" height="1500" alt="Three phone screens of the FORMA app: the home screen with weekly activity, the AI coach analysis and an active workout with a rest timer." loading="lazy"></button><p class="ph__cap"><b>FORMA</b>Home screen and a live session with the rest timer. The interface is in Polish.</p></div></figure>
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>One codebase, two platforms, a coach that plans your week.</strong>A working iOS and Android app with cloud sync, a rest timer with notifications, progress charts and weekly AI plans built from your own training history.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Most fitness apps are either a plain logbook with no analysis, or a complex platform behind a subscription. We wanted a quick log you can fill in between sets, with real analysis of what you did, for free.</p></section>
+                <section class="pw__sec"><h3>What we built</h3><ol class="steps">
+                  <li><span><b>Workout log.</b> Templates like push, pull and leg day, or a custom session; sets, reps and weight entered set by set, with a session clock.</span></li>
+                  <li><span><b>Rest timer.</b> Ticking off a set starts the rest; a push notification calls you back for the next one.</span></li>
+                  <li><span><b>History.</b> Every session in the cloud, with weekly volume charts.</span></li>
+                  <li><span><b>AI coach.</b> Gemini gets your profile and four weeks of sets in a structured prompt and returns a weekly assessment, next week's plan and overtraining warnings.</span></li>
+                  <li><span><b>Profile and onboarding.</b> Age, height, weight, goal and level, which shape every plan.</span></li>
+                  <li><span><b>Exercise library.</b> 30+ exercises, searchable, split into strength and cardio.</span></li>
+                </ol></section>
+                <section class="pw__sec"><h3>The app</h3><figure class="fig" style="--cols: 4; --ar: 687 / 1400"><div class="ph"><button class="ph__img" type="button" data-view="Pick a plan"><img src="assets/img/projects/forma-train.webp" width="675" height="1348" alt="Training screen with an AI suggested plan and workout templates with start buttons." loading="lazy"></button><p class="ph__cap"><b>Pick a plan</b>AI suggestion on top, templates below.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Log set by set"><img src="assets/img/projects/forma-session.webp" width="687" height="1400" alt="Active push day session with four sets of bench press and a rest timer at 2:58." loading="lazy"></button><p class="ph__cap"><b>Log set by set</b>Weight, reps, tick, and the rest timer starts.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Session summary"><img src="assets/img/projects/forma-log.webp" width="687" height="1400" alt="Summary of a push day session listing each set with weight and reps." loading="lazy"></button><p class="ph__cap"><b>Session summary</b>Every set saved to the cloud.</p></div><div class="ph"><button class="ph__img" type="button" data-view="History"><img src="assets/img/projects/forma-history.webp" width="687" height="1400" alt="History screen with a volume bar chart and a list of past sessions." loading="lazy"></button><p class="ph__cap"><b>History</b>Weekly training volume.</p></div></figure><figure class="fig" style="--cols: 4; --ar: 687 / 1400"><div class="ph"><button class="ph__img" type="button" data-view="AI coach"><img src="assets/img/projects/forma-ai.webp" width="497" height="1393" alt="AI coach screen with no overtraining, push, pull, legs and recovery scores, and a plan for next week." loading="lazy"></button><p class="ph__cap"><b>AI coach</b>Balanced week: scores, comment and next week's plan.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Overtraining warning"><img src="assets/img/projects/forma-ai-warn.webp" width="519" height="1440" alt="AI coach screen warning of overtraining risk with low pull and recovery scores and a balanced plan." loading="lazy"></button><p class="ph__cap"><b>Overtraining warning</b>Too much chest, too little legs and back.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Onboarding"><img src="assets/img/projects/forma-onboard.webp" width="687" height="1400" alt="Profile setup screen with sex, height, weight, training goal and experience level." loading="lazy"></button><p class="ph__cap"><b>Onboarding</b>Goal and level shape every plan.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Profile"><img src="assets/img/projects/forma-profile.webp" width="687" height="1400" alt="Profile screen listing age, height, weight, goal and level with a log out button." loading="lazy"></button><p class="ph__cap"><b>Profile</b>Age, height, weight, goal, level.</p></div></figure></section>
+                <section class="pw__sec"><h3>How it is built</h3><dl class="calc">
+                  <div><dt class="label">App</dt><dd>React Native 0.81 and Expo 54 in strict TypeScript, one codebase for iOS and Android</dd></div>
+                  <div><dt class="label">State</dt><dd>Zustand for global state, React Query for caching and sync, React Navigation for screens</dd></div>
+                  <div><dt class="label">Backend</dt><dd>Supabase: PostgreSQL, auth with JWT sessions, and row-level security so each user sees only their own data</dd></div>
+                  <div><dt class="label">AI</dt><dd>Gemini Flash for quick replies and warnings, Gemini Pro for the weekly plan; it needs at least three sessions to judge</dd></div>
+                  <div><dt class="label">Quality</dt><dd>Jest unit tests with coverage over 60%, CI on GitHub Actions, a Kanban board for the work</dd></div>
+                </dl></section>
+                <section class="pw__sec"><h3>How we worked</h3><p>Requirements first, ranked with MoSCoW into must, should and could have. Then use-case and architecture diagrams, a database schema of four tables, and the app screen by screen: login, onboarding, dashboard, training, active workout, history, AI coach and profile. Every stage was documented and the project ended with a user guide and a presentation.</p></section>
+              </div>
+            </article>
+            <article class="pw" id="p-ev" data-title="EV fleet efficiency analysis" hidden>
+              <aside class="pw__side">
+                <p class="label">09 Software and AI, data analysis</p>
+                <h2 class="pw__title">EV fleet efficiency analysis</h2>
+                <p class="pw__lead">How much does winter cost an electric fleet? Three years of Chicago fleet and weather data, modelled in Power BI and tested with ANOVA.</p>
+                <dl class="pw__facts"><div><dt class="label">Role</dt><dd>Data cleaning, modelling, DAX, dashboards and statistics</dd></div><div><dt class="label">When</dt><dd>2026</dd></div><div><dt class="label">Data</dt><dd>Chicago, IL, 2020 to 2023: 1,516 records after ETL</dd></div><div><dt class="label">Stack</dt><dd class="tags"><i>Power BI</i><i>DAX</i><i>Power Query</i><i>jamovi</i><i>ANOVA</i></dd></div></dl>
+              </aside>
+              <div class="pw__main">
+                <figure class="fig" style="--cols: 1; --ar: 1600 / 851"><div class="ph"><button class="ph__img" type="button" data-view="Fleet overview"><img src="assets/img/projects/ev-fleet.webp" width="1600" height="851" alt="Power BI page: average efficiency in kWh per mile by season, with vehicle type and year filters." loading="lazy"></button><p class="ph__cap"><b>Fleet overview</b>Efficiency by season, filterable by vehicle type and year.</p></div></figure>
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Winter costs 53% more energy.</strong>3.58 kWh per mile in winter against 2.34 in autumn. Welch ANOVA, F(3, 742) = 20.2, p &lt; 0.001: winter differs from every other season.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Fleet budgets often treat every month the same. The questions: does weather change how efficiently electric buses and yard tractors use their batteries, and is it the cold or the snow that matters?</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps"><li><span><b>ETL.</b> Cleaned and joined trip, energy and weather data in Power Query into 1,516 records.</span></li><li><span><b>Model.</b> A star schema: trips and weather linked one-to-many through a shared calendar dimension.</span></li><li><span><b>Measures.</b> Nine DAX measures, including year-to-date and year-on-year with TOTALYTD and SAMEPERIODLASTYEAR.</span></li><li><span><b>Dashboards.</b> Three report pages: fleet overview by season, weather against efficiency, and the trend over time.</span></li><li><span><b>Statistics.</b> One-way ANOVA in jamovi. Levene and Shapiro-Wilk ruled out the classic test, so I used Welch, then Tukey post-hoc.</span></li></ol></section>
+                <figure class="fig" style="--cols: 2; --ar: 16 / 9.5"><div class="ph"><button class="ph__img" type="button" data-view="Weather against efficiency"><img src="assets/img/projects/ev-weather.webp" width="1600" height="896" alt="Scatter of temperature against efficiency with a falling trend line, and speed by snow category." loading="lazy"></button><p class="ph__cap"><b>Weather against efficiency</b>Colder days cost more energy; snow does not slow the fleet.</p></div><div class="ph"><button class="ph__img" type="button" data-view="Data model"><img src="assets/img/projects/ev-model.webp" width="1600" height="933" alt="Power BI model view: trips and weather tables linked to a calendar table." loading="lazy"></button><p class="ph__cap"><b>Data model</b>Star schema around the calendar.</p></div></figure>
+                <section class="pw__sec"><h3>What the data says</h3><ol class="steps"><li><span><b>Temperature, not snow.</b> Efficiency falls from about 4 kWh per mile at −20 °C to 2.2 at +28 °C, while speed is the same in all three snow categories: it is battery chemistry, not road conditions.</span></li><li><span><b>Winter stands apart.</b> Tukey post-hoc: winter differs from spring, summer and autumn, by up to 1.23 kWh per mile.</span></li><li><span><b>It holds up.</b> The effect stays with classic and Welch ANOVA, and for buses alone (n = 689, p = 0.003).</span></li><li><span><b>What to do.</b> Budget 30 to 50% more energy for winter, and watch it on the dashboard as it happens.</span></li></ol></section>
+                <figure class="fig" style="--cols: 1; --ar: 1600 / 903"><div class="ph"><button class="ph__img" type="button" data-view="Over time"><img src="assets/img/projects/ev-time.webp" width="1600" height="903" alt="Efficiency trend over time with a monthly table and year-on-year change." loading="lazy"></button><p class="ph__cap"><b>Over time</b>Monthly trend with year-on-year change.</p></div></figure>
+
+              </div>
+            </article>
+
+            <article class="pw" id="p-nutri" data-title="NutriVision AI" hidden>
+              <aside class="pw__side">
+                <p class="label">10 Software and AI, full-stack</p>
+                <h2 class="pw__title">NutriVision AI</h2>
+                <p class="pw__lead">Estimates the calories in a meal from a single photo, without sending anyone's images to a cloud API.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Role</dt><dd>Architecture, backend, model integration and monitoring</dd></div>
+                  <div><dt class="label">When</dt><dd>2025</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>React</i><i>FastAPI</i><i>PostgreSQL</i><i>Docker Compose</i><i>Ollama</i><i>LLaVA</i><i>Zabbix</i></dd></div>
+                </dl>
+                <p class="pw__links"><a class="link" href="https://github.com/mikolajkurek" target="_blank" rel="noopener">Code ↗</a></p>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Calories from a single photo.</strong>Snap a meal and get an estimate. The model runs on my own server, so photos never leave it, and it stays stable on limited RAM.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Food photos are personal. Most calorie apps send them to a third-party model; I wanted the same result with everything running on one machine.</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps">
+                  <li><span><b>Services.</b> React frontend, FastAPI backend and PostgreSQL, wired together with Docker Compose.</span></li>
+                  <li><span><b>Model.</b> A local vision LLM (LLaVA) served through the Ollama engine.</span></li>
+                  <li><span><b>Efficiency.</b> Image optimisation with Pillow keeps memory use in check.</span></li>
+                  <li><span><b>Monitoring.</b> A Zabbix stack (Server, Agent2) tracks container performance and model response time live.</span></li>
+                </ol></section>
+              </div>
+            </article>
+
+            <article class="pw" id="p-ecg" data-title="ECG anomaly detection" hidden>
+              <aside class="pw__side">
+                <p class="label">11 Software and AI, data science</p>
+                <h2 class="pw__title">ECG anomaly detection</h2>
+                <p class="pw__lead">A 1D convolutional network that flags arrhythmias in single heartbeats, tuned so that critical cases are not missed, with a small web app to try it on real recordings.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">Data</dt><dd>MIT-BIH arrhythmia dataset: 87,553 heartbeats, 187 samples each at 125 Hz</dd></div>
+                  <div><dt class="label">When</dt><dd>2024</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>Python</i><i>TensorFlow</i><i>Keras</i><i>Pandas</i><i>NumPy</i><i>scikit-learn</i><i>Matplotlib</i><i>Flask</i></dd></div>
+                </dl>
+                <p class="pw__links"><a class="link" href="https://github.com/mikolajkurek" target="_blank" rel="noopener">Notebook ↗</a></p>
+              </aside>
+              <div class="pw__main">
+                <figure class="fig" style="--cols: 1; --ar: 8 / 5"><div class="ph"><button class="ph__img" type="button" data-view="The web app"><img src="assets/img/projects/ecg-app.webp" width="2000" height="1250" alt="ECG web app showing a heartbeat signal chart, filter buttons and the model prediction Abnormal with 99.5% confidence." loading="lazy"></button><p class="ph__cap"><b>The web app</b>An abnormal beat, flagged with 99.5% confidence and confirmed against the label.</p></div></figure>
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>97.6% of arrhythmias caught.</strong>Only 70 of 2,934 abnormal beats missed in the test set, with 91% accuracy overall. Tuned for sensitivity on purpose, because in a clinic a missed anomaly costs far more than a false alarm.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>In MIT-BIH about 83% of heartbeats are normal and the rarest arrhythmia class is under 1%, and no new samples could be added. A naive model learns to call everything normal and still scores well on accuracy.</p></section>
+                <section class="pw__sec"><h3>The data</h3><p>Each sample is one heartbeat cut to 187 points at 125 Hz. Arrhythmias come in four kinds, and some look very close to a normal beat.</p><figure class="fig" style="--cols: 1; --ar: 2000 / 450"><div class="ph"><button class="ph__img" type="button" data-view="Five kinds of heartbeat"><img src="assets/img/projects/ecg-classes.webp" width="2000" height="450" alt="Five small charts of ECG heartbeats: normal in black and four arrhythmia classes in blue." loading="lazy"></button><p class="ph__cap"><b>Five kinds of heartbeat</b>20 beats of each class from the sample set; the bold line is their average.</p></div></figure></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps">
+                  <li><span><b>Preparation.</b> Merged five beat classes into normal and abnormal, scaled the signals and split train, validation and test.</span></li>
+                  <li><span><b>Model.</b> A compact 1D CNN in Keras: two convolution and pooling stages, dropout against overfitting, a sigmoid output.</span></li>
+                  <li><span><b>Imbalance.</b> Class weights that make each missed arrhythmia cost about 14 times more than a false alarm.</span></li>
+                  <li><span><b>Evaluation.</b> Recall as the main metric, with the decision threshold lowered to 0.3; the trade-off is more false alarms that a doctor can rule out.</span></li>
+                  <li><span><b>App.</b> A Flask web app that plots a recording and returns the prediction with its confidence, filterable by normal and abnormal samples.</span></li>
+                </ol></section>
+                <section class="pw__sec"><h3>Try it</h3><p>The Flask app loads a balanced sample of 100 beats, plots each one and shows the prediction next to the true label. On that sample the model gets 92 of 100 right.</p><figure class="fig" style="--cols: 1; --ar: 8 / 5"><div class="ph"><button class="ph__img" type="button" data-view="A normal beat"><img src="assets/img/projects/ecg-normal.webp" width="2000" height="1250" alt="ECG web app filtered to normal samples, showing a normal heartbeat predicted as Normal." loading="lazy"></button><p class="ph__cap"><b>A normal beat</b>Filtered to normal samples; the model agrees.</p></div></figure></section>
+              </div>
+            </article>
+
+            <article class="pw" id="p-pose" data-title="AI trainer" hidden>
+              <aside class="pw__side">
+                <p class="label">12 Software and AI, computer vision</p>
+                <h2 class="pw__title">AI trainer</h2>
+                <p class="pw__lead">An app that watches your exercise through a regular camera, counts your repetitions and corrects your form.</p>
+                <dl class="pw__facts">
+                  <div><dt class="label">When</dt><dd>2024</dd></div>
+                  <div><dt class="label">Input</dt><dd>Any webcam</dd></div>
+                  <div><dt class="label">Stack</dt><dd class="tags"><i>Python</i><i>MediaPipe</i><i>OpenCV</i></dd></div>
+                </dl>
+                <p class="pw__links"><a class="link" href="https://github.com/mikolajkurek" target="_blank" rel="noopener">Code ↗</a></p>
+              </aside>
+              <div class="pw__main">
+                <section class="pw__sec pw__result pw__result--text"><h3>Result</h3><p><strong>Every rep counted, every slip flagged.</strong>33 body landmarks, tracked live from a webcam, become a repetition count and instant feedback on form.</p></section>
+                <section class="pw__sec"><h3>The problem</h3><p>Training alone means nobody counts or tells you when your form breaks down. A camera can do both if the motion is read as geometry.</p></section>
+                <section class="pw__sec"><h3>What I built</h3><ol class="steps">
+                  <li><span><b>Tracking.</b> MediaPipe pose estimation follows body keypoints frame by frame.</span></li>
+                  <li><span><b>Geometry.</b> Joint angles and motion trajectory split each exercise into phases.</span></li>
+                  <li><span><b>Counting.</b> A full phase cycle counts as one repetition.</span></li>
+                  <li><span><b>Feedback.</b> Flags mistakes as they happen, for example an arm bent too far.</span></li>
+                </ol></section>
+              </div>
+            </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== 4 SKILLS -->
+    <section class="panel panel--skills s-green" id="skills" data-scheme="green" data-title="Skills" aria-labelledby="skills-title">
+      <div class="panel__inner">
+        <div class="skills">
+          <div class="skills__head">
+            <h2 class="h2" id="skills-title" tabindex="-1" data-focus>Skills</h2>
+            <p class="lead">Grouped the way I use them, from dataset to deployed device.</p>
+          </div>
+          <div class="skills__grid tone-block">
+            <section class="cell"><h3>AI and computer vision</h3>
+              <ul><li>YOLO, trained and quantised</li><li>TensorFlow, Keras, CNNs</li><li>OpenCV, MediaPipe</li><li>scikit-learn, Pandas</li><li>LLaVA on Ollama</li></ul></section>
+            <section class="cell"><h3>Data and statistics</h3>
+              <ul><li>Power BI, DAX, Power Query</li><li>Star-schema data models</li><li>jamovi: ANOVA, Welch, Tukey</li><li>Class-imbalance strategies</li><li>Labelling and augmentation</li></ul></section>
+            <section class="cell"><h3>Software and DevOps</h3>
+              <ul><li>Python, C++ on Arduino</li><li>JavaScript, React</li><li>FastAPI, Flask, PostgreSQL</li><li>Docker, Nginx, Zabbix</li><li>Git, Blender Python API</li></ul></section>
+            <section class="cell"><h3>Hardware and electronics</h3>
+              <ul><li>Raspberry Pi, Arduino Uno R4</li><li>Siemens S7 PLCs, scanners</li><li>Sensors, MOSFET drivers, I2C</li><li>Electronics and PCB assembly</li><li>Vision-system design</li></ul></section>
+            <section class="cell"><h3>Mechanical design and CAD</h3>
+              <ul><li>Fusion 360, SolidWorks, Creo</li><li>Technical drawing, ISO fits, GD&amp;T</li><li>Shaft and machine-element calculations</li><li>Product documentation</li><li>DICOM to STL in Blender</li></ul></section>
+            <section class="cell"><h3>Simulation and fabrication</h3>
+              <ul><li>Ansys Fluent: CFD, heat transfer</li><li>Ansys Mechanical: FEM, composites</li><li>Mesh studies and verification</li><li>Bambu Lab X1C, slicer tuning</li><li>Medical-grade polymers</li></ul></section>
+            <section class="cell"><h3>Working style</h3>
+              <ul><li>Founder-level ownership</li><li>Working with clinicians</li><li>Shipping under pressure</li><li>An eye for images</li></ul></section>
+            <section class="cell cell--lang"><h3>Languages</h3>
+              <ul><li><span class="big">Polish</span><br><span class="muted">Native</span></li><li><span class="big">English</span><br><span class="muted">C1, certified</span></li></ul></section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== 6 CONTACT -->
+    <section class="panel panel--contact s-red" id="contact" data-scheme="red" data-title="Contact" aria-labelledby="contact-title">
+      <div class="panel__inner">
+        <div class="contact">
+          <div class="contact__main">
+            <h2 class="contact__title" id="contact-title" tabindex="-1" data-focus>Let's build something.</h2>
+            <div style="display:grid; gap: var(--s4)">
+              <a class="email" href="mailto:mikolaj.kurek21@gmail.com">mikolaj.kurek21@gmail.com</a>
+              <p style="max-width: 32em">Open to R&amp;D and computer-vision roles, research assistantships and MSc research collaborations. In Besancon, France, until January 2027.</p>
+            </div>
+          </div>
+
+          <div class="contact__side">
+            <form class="form tone-block" data-to="mikolaj.kurek21@gmail.com" aria-label="Contact form">
+              <div class="form__row">
+                <div class="field"><label class="label" for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Ada Lovelace"></div>
+                <div class="field"><label class="label" for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="ada@lab.org"></div>
+              </div>
+              <div class="field"><label class="label" for="f-purpose">About</label>
+                <select id="f-purpose" name="purpose">
+                  <option>Job opportunity</option>
+                  <option>MSc or research</option>
+                  <option>Collaboration</option>
+                  <option>Just saying hi</option>
+                </select>
+              </div>
+              <div class="field"><label class="label" for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="What are we building?"></textarea></div>
+              <div class="form__foot">
+                <span class="label" data-form-status aria-live="polite">Opens your mail app</span>
+                <button class="btn btn--solid" type="submit"><span class="snake-host">Send</span> <span class="arrow" aria-hidden="true">→</span></button>
+              </div>
+            </form>
+            <ul class="links">
+              <li><a href="https://github.com/mikolajkurek" target="_blank" rel="noopener"><span data-snake>GitHub</span><span>↗</span></a></li>
+              <!-- Add when ready: <li><a href="https://www.linkedin.com/in/..." target="_blank" rel="noopener"><span data-snake>LinkedIn</span><span>↗</span></a></li> -->
+              <li><a href="https://www.instagram.com/iamnotmikolaj/" target="_blank" rel="noopener"><span data-snake>Instagram</span><span>@iamnotmikolaj ↗</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================== IMAGE VIEWER
+       Pictures in the project write-ups open here, in an app-style window
+       (js/viewer.js) -->
+  <div class="viewer" hidden>
+    <section class="viewer__win" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+      <header class="viewer__bar">
+        <div class="viewer__dots">
+          <button class="viewer__dot viewer__dot--close" type="button" data-viewer-close aria-label="Close"></button>
+          <button class="viewer__dot viewer__dot--min" type="button" data-viewer-close aria-label="Close"></button>
+          <button class="viewer__dot viewer__dot--max" type="button" data-viewer-max aria-label="Toggle full size"></button>
+        </div>
+        <p class="viewer__title label" id="viewer-title"></p>
+        <div class="viewer__nav">
+          <button type="button" data-viewer-prev aria-label="Previous picture">‹</button>
+          <span class="label" data-viewer-count></span>
+          <button type="button" data-viewer-next aria-label="Next picture">›</button>
+        </div>
+      </header>
+      <div class="viewer__body"><img alt=""></div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <p class="foot__credit">© 2026 Designed and built by Mikolaj Kurek</p>
+    <div class="foot__pager">
+      <button type="button" data-step="-1" aria-label="Previous page">←</button>
+      <span class="label" data-pager>1/5</span>
+      <button type="button" data-step="1" aria-label="Next page">→</button>
+    </div>
+    <nav class="foot__nav" aria-label="Sections">
+      <a href="#index" data-goto="index">Map</a>
+      <a href="#about" data-goto="about">About</a>
+      <a href="#work" data-goto="work">Work</a>
+      <a href="#skills" data-goto="skills">Skills</a>
+      <a href="#contact" data-goto="contact">Contact</a>
+    </nav>
+  </footer>
+
+  <canvas class="fx fx--transition" aria-hidden="true"></canvas>
+  <canvas class="fx fx--burst" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
 </body>
 </html>

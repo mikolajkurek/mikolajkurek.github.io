@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Design tokens: colour, type, space, motion (light theme only)
+   Each panel picks a colourway (.s-*) that defines --bg / --fg / --accent.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Alte Haas Grotesk";
+  src: url("../assets/fonts/AlteHaasGroteskRegular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alte Haas Grotesk";
+  src: url("../assets/fonts/AlteHaasGroteskBold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  /* Palette */
+  --ink: #0a0c09;
+  --graphite: #3a3a3a;
+  --paper: #fafaf7;
+  --white: #ffffff;
+  --blue: #242edb; /* the mascot blue, the site's main colour */
+  --lemon: #f9dc4a;
+  --lemon-ink: #28200a;
+  --green: #4ba74a;
+  --sage: #8abd78;
+  --pink: #f7b7bf;
+  --lime: #d6ef62;
+  --marigold: #ffc33c;
+  --red: #e2452b;
+  --pop: #f8fc00; /* the yellow drawn on the Paris photo: loader and "next" marks */
+
+  /* Type */
+  --font-sans: "Alte Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-pixel: "Silkscreen", "Geist Mono", monospace;
+
+  --t-small: 12.5px;
+  --t-body: clamp(15px, 0.3vw + 11px, 17px);
+  --t-lead: clamp(22px, 1.5vw + 8px, 38px);
+  --t-h3: clamp(26px, 1.8vw + 8px, 46px);
+  --t-h2: clamp(48px, 6vw, 112px);
+
+  --track-body: -0.02em;
+  --track-head: -0.045em;
+  --track-giant: -0.06em;
+
+  /* Space (4px base) */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+  --gutter: clamp(16px, 2vw, 32px);
+  --topbar-h: 68px;
+  --foot-h: 44px;
+
+  /* Pixel unit for the snake and micro graphics */
+  --px: 6px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Colourways ------------------------------------------------------------
+   Every page is white with ink text; its own colour (--tone) fills one block
+   in the page. The colours are the CV metro lines: Work is marigold (Work line),
+   Skills green (Clubs line), Contact red (Certificates line).
+   The CV keeps its paper colourway. */
+.s-blue       { --bg: var(--white); --fg: var(--ink); --tone: var(--blue);       --tone-fg: var(--white); --accent: var(--blue); }
+.s-paper      { --bg: var(--paper); --fg: var(--ink);                                                    --accent: var(--blue); }
+.s-green      { --bg: var(--white); --fg: var(--ink); --tone: var(--green);      --tone-fg: var(--white); --accent: var(--green); }
+.s-marigold   { --bg: var(--white); --fg: var(--ink); --tone: var(--marigold);   --tone-fg: var(--ink);   --accent: var(--marigold); }
+.s-red        { --bg: var(--white); --fg: var(--ink); --tone: var(--red);        --tone-fg: var(--white); --accent: var(--red); }
+
+/* Derived tones, declared with the colourway so they resolve per panel */
+.s-blue, .s-paper, .s-green, .s-marigold, .s-red, .tone-block {
+  --muted: color-mix(in srgb, var(--fg) 74%, var(--bg));
+  --line: color-mix(in srgb, var(--fg) 28%, var(--bg));
+  --faint: color-mix(in srgb, var(--fg) 8%, var(--bg));
+}
+
+/* The coloured block of a page: inside it the tone is the background */
+.tone-block { --bg: var(--tone); --fg: var(--tone-fg); --accent: var(--tone-fg); background: var(--bg); color: var(--fg); }
