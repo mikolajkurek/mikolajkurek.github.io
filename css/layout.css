@@ -108,7 +108,7 @@ html.is-loading .edge-blur { visibility: hidden; }
 .loader__fig { container-type: inline-size; grid-template-columns: minmax(0, 1fr); }
 .loader__intro { display: flex; justify-content: space-between; align-items: last baseline; gap: 3cqw; margin-top: var(--s2); }
 .loader__name { font-size: 7.6cqw; font-weight: 700; letter-spacing: var(--track-giant); line-height: 0.8; text-transform: uppercase; white-space: nowrap; }
-.loader__titles { font-size: 1.85cqw; font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; white-space: nowrap; }
+.loader__titles { font-size: 1.76cqw; font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; white-space: nowrap; }
 .loader__intro > * { animation: rise 0.7s var(--ease-out) backwards; }
 .loader__titles { animation-delay: 150ms; }
 /* Decoding letters (js/main.js decodeText) */
@@ -258,6 +258,8 @@ html.is-loading .edge-blur { visibility: hidden; }
   column-gap: calc(var(--gutter) * 2);
 }
 .cv__intro { display: flex; flex-direction: column; gap: var(--s5); min-height: 0; padding-top: var(--s2); }
+/* The three-line summary, as on the loading screen */
+.cv__titles { font-size: clamp(17px, 0.6vw + 11px, 21px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-top: calc(var(--s5) * -0.5); }
 .cv__profile { max-width: 34em; }
 .cv__foot { margin-top: auto; display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); }
 .cv__list { min-height: 0; }
